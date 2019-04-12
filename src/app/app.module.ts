@@ -13,6 +13,12 @@ import { CoursesComponent } from './views/home/courses/courses.component';
 // user component
 import { StudentComponent } from './views/user/student/student.component';
 import { FacultyComponent } from './views/user/faculty/faculty.component';
+import { AdminComponent } from './views/user/admin/admin/admin.component';
+import { AdminEditComponent } from './views/user/admin/admin-edit/admin-edit.component';
+import { FacultyEditComponent } from './views/user/admin/faculty-edit/faculty-edit.component';
+import { FacultyNewComponent } from './views/user/admin/faculty-new/faculty-new.component';
+import { StudentEditComponent } from './views/user/admin/student-edit/student-edit.component';
+import { StudentNewComponent } from './views/user/admin/student-new/student-new.component';
 
 // course component
 import { CourseEditComponent } from './views/course/faculty/course-edit/course-edit.component';
@@ -41,6 +47,12 @@ import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtub
     CoursesComponent,
     StudentComponent,
     FacultyComponent,
+    AdminComponent,
+    AdminEditComponent,
+    FacultyEditComponent,
+    FacultyNewComponent,
+    StudentEditComponent,
+    StudentNewComponent,
     CourseEditComponent,
     FacultyCourseListComponent,
     FacultyCourseNewComponent,
