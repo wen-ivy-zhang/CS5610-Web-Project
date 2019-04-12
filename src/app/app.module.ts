@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // home component
 import { HomeComponent } from './views/home/home/home.component';
@@ -38,6 +40,10 @@ import { WidgetHtmlComponent } from './views/widget/widget-edit/widget-html/widg
 import { WidgetImageComponent } from './views/widget/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
 
+// services
+import {SharedService} from './services/shared.service';
+import {UserService} from './services/user.service.client';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,9 +76,14 @@ import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtub
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    SharedService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

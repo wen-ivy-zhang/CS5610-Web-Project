@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  baseUrl: 'https://cs5610-project.herokuapp.com/',
   production: false
 };
 
