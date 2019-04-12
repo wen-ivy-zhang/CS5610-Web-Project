@@ -43,6 +43,7 @@ import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtub
 // services
 import {SharedService} from './services/shared.service';
 import {UserService} from './services/user.service.client';
+import {CourseService} from './services/course.service.client';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import {UserService} from './services/user.service.client';
   ],
   providers: [
     SharedService,
-    UserService
+    UserService,
+    CourseService
   ],
   bootstrap: [AppComponent]
 })

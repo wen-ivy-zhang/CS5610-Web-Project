@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+nav.nav-neu {
+  background: crimson;
+}
+
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+
+thead.thead-primary {
+  color: white;
+  background: steelblue;
+}
+
+a.btn-fb {
+  color: white;
+  background: #3C5A99;
+}
+
+thead.thead-neu {
+  border-top: 3px solid crimson;
+  border-bottom: 3px solid crimson;
+}

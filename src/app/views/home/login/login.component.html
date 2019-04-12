@@ -1,15 +1,15 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
   <div class="container-fluid row">
     <div class="pull-left">
-      <a routerLink="./" class="navbar-brand">
+      <a routerLink="./" class="navbar-brand text-white">
         Login
       </a>
     </div>
     <div class="pull-right">
-      <button routerLink="/register" class="navbar-text btn">
+      <button routerLink="/register" class="text-white btn">
         Register
       </button>
-      <button routerLink="/" class="navbar-text btn">
+      <button routerLink="/" class="text-white btn">
         Visit as Guest
       </button>
     </div>
@@ -80,24 +80,25 @@
 
       <br/>
 
-      <button class="btn btn-primary btn-block"
+      <button class="btn btn-secondary btn-block"
               type="submit"
               [disabled]="!f.valid">Login
       </button>
     </form>
     <div [hidden]="type!=='STUDENT'">
-      <a href="{{baseUrl}}/facebook/login" class="btn btn-primary btn-block mt-2">
+      <a href="{{baseUrl}}/facebook/login" class="btn btn-fb btn-block mt-2">
+        <i class="fab fa-facebook"></i>
         Login with Facebook
       </a>
     </div>
   </div>
 </div>
 
-<nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
   <div class="container-fluid">
-    <a routerLink="/"
-       class="navbar-text white-text pull-left">
-      <span class="fa fa-home"></span>
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
     </a>
   </div>
 </nav>
