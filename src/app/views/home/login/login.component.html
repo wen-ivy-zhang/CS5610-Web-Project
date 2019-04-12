@@ -16,8 +16,7 @@
   </div>
 </nav>
 
-<div>
-  <div></div>
+<div class="container">
   <div class="container">
     <br/>
     <div *ngIf="errorFlag" class="alert alert-danger">
@@ -86,14 +85,12 @@
               [disabled]="!f.valid">Login
       </button>
     </form>
-    <br/>
     <div [hidden]="type!=='STUDENT'">
-      <a href="{{baseUrl}}/facebook/login" class="btn btn-primary btn-block">
+      <a href="{{baseUrl}}/facebook/login" class="btn btn-primary btn-block mt-2">
         Login with Facebook
       </a>
     </div>
   </div>
-  <div></div>
 </div>
 
 <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
