@@ -1,27 +1,29 @@
-# Project
+# CS6510-Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+### Contributing to this Project
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* clone repo to local machine  
+  ```
+  git clone https://github.com/sunnyfz309/CS5610-Project.git
+  ```  
+* create branch for changes on local
+  ```
+  git checkout -b <branch_name>
+  ```
+* push branch with changes to remote
+  ```
+  git push -u origin <branch_name>
+  ```
+  
+### Useful Command Cheatsheet
+  ```
+  ng serve
+  ng build
+  node server.js
+  ...
+  ```
+  
+### Links 
+* [Heroku Dashboard](https://dashboard.heroku.com/apps/cs5610-project)
+* [Heroku App](https://cs5610-project.herokuapp.com/)
+* [Project Requirement](https://onedrive.live.com/view.aspx?resid=5122A5DA1ABBEA0C!952&ithint=file%2cdocx&authkey=!ANFc4Yn-vxTaFik)
