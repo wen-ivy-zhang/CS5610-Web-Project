@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
           } else if (this.type === 'STUDENT') {
             this.sharedService.user = user;
             this.router.navigate(['/student']);
-          } else if (this.type === 'PROFESSOR') {
+          } else if (this.type === 'FACULTY') {
             this.sharedService.user = user;
-            this.router.navigate(['/professor']);
+            this.router.navigate(['/faculty']);
           } else if (this.type === 'ADMIN') {
             this.sharedService.user = user;
             this.router.navigate(['/admin']);
@@ -62,8 +62,8 @@ export class LoginComponent implements OnInit {
     if (this.sharedService.user) {
       if (this.sharedService.user.type === 'STUDENT') {
         this.router.navigate(['/student']);
-      } else if (this.sharedService.user.type === 'PROFESSOR') {
-        this.router.navigate(['/professor']);
+      } else if (this.sharedService.user.type === 'FACULTY') {
+        this.router.navigate(['/faculty']);
       } else if (this.sharedService.user.type === 'ADMIN') {
         this.router.navigate(['/admin']);
       } else {
