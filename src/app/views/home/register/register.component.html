@@ -1,3 +1,148 @@
-<p>
-  register works!
-</p>
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="pull-left">
+      <a routerLink="./" class="navbar-brand text-white">
+        Register
+      </a>
+    </div>
+    <div class="pull-right">
+      <button routerLink="/login" class="text-white btn">
+        Login
+      </button>
+      <button routerLink="/" class="text-white btn">
+        Visit as Guest
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container mb-5">
+  <div class="container">
+    <br/>
+
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+
+    <h5>Please choose your role: </h5>
+    <div class="form-check">
+      <input class="form-check-input"
+             type="radio"
+             name="exampleRadios"
+             id="admin"
+             [value]="'ADMIN'"
+             [(ngModel)]="type">
+      <label class="form-check-label" for="admin">
+        Admin
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input"
+             type="radio"
+             name="exampleRadios"
+             id="faculty"
+             [value]="'FACULTY'"
+             [(ngModel)]="type">
+      <label class="form-check-label" for="faculty">
+        Faculty
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input"
+             type="radio"
+             name="exampleRadios"
+             id="student"
+             [value]="'STUDENT'"
+             [(ngModel)]="type">
+      <label class="form-check-label" for="student">
+        Student
+      </label>
+    </div>
+    <br/>
+
+    <form (ngSubmit)="register()" #r="ngForm">
+      <label for="username">Username:</label>
+      <input type="text"
+             class="form-control"
+             placeholder="alice"
+             name="username"
+             id="username"
+             ngModel required #username="ngModel"/>
+      <span class="help-block" *ngIf="!username.valid && username.touched">
+      Please enter username!
+    </span>
+
+      <label for="password">Password:</label>
+      <input type="password"
+             class="form-control"
+             placeholder="password"
+             name="password"
+             id="password"
+             ngModel required #password="ngModel"/>
+      <span class="help-block" *ngIf="!password.valid && password.touched">
+      Please enter password!
+    </span>
+
+      <label for="vpassword">Confirm Password:</label>
+      <input type="password"
+             class="form-control"
+             placeholder="verify password"
+             name="vpassword"
+             id="vpassword"
+             ngModel required #vpassword="ngModel"/>
+      <span class="help-block" *ngIf="!vpassword.valid && vpassword.touched">
+      Please verify password!
+    </span>
+
+      <label for="firstName">FirstName:</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Alice"
+             name="firstName"
+             id="firstName"
+             ngModel required #firstName="ngModel"/>
+      <span class="help-block" *ngIf="!firstName.valid && firstName.touched">
+      Please enter firstName!
+    </span>
+
+
+      <label for="lastName">LastName:</label>
+      <input type="text"
+             class="form-control"
+             placeholder="Alice"
+             name="lastName"
+             id="lastName"
+             ngModel required #lastName="ngModel"/>
+      <span class="help-block" *ngIf="!lastName.valid && lastName.touched">
+      Please enter LastName!
+    </span>
+
+      <label for="email">Email:</label>
+      <input type="text"
+             class="form-control"
+             placeholder="alice@gmail.com"
+             name="email"
+             id="email"
+             ngModel required #email="ngModel"/>
+      <span class="help-block" *ngIf="!email.valid && email.touched">
+      Please enter email!
+    </span>
+    <br/>
+    <button class="btn btn-secondary btn-block" type="submit" [disabled]="!r.valid">
+      Register
+    </button>
+    </form>
+    <a class="btn btn-danger btn-block mt-2" routerLink="/">Cancel</a>
+  </div>
+  <br/>
+</div>
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>

@@ -1,6 +1,23 @@
 // prod mode: change server.js, environment.ts, model.js, widgets.server.service.js
 // const baseUrl = 'https://cs5610-project.herokuapp.com/';
 const baseUrl = 'http://localhost:4200';
+// prod mode: change server.js, environment.ts, model.js, widgets.server.service.js (x2)
+
+// npm install express --save
+// npm install path --save
+// npm install body-parser --save
+// npm install passport --save
+// npm install cookie-parser --save
+// npm install express-session --save
+
+// npm install mongoose --save
+// npm install bcrypt-nodejs --save
+// npm install passport-facebook --save
+// npm install passport-local --save
+
+// npm install ngx-quill-editor --save
+// npm install multer --save
+
 
 const express = require('express');
 const path = require('path');
@@ -46,9 +63,8 @@ const port = process.env.PORT || '3200';
 app.set('port', port);
 const server = http.createServer(app);
 
-// require("./assignment/app")(app);
+require("./server/app")(app);
 
-// For Build: Catch all other routes and return the index file -- BUILDING
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
