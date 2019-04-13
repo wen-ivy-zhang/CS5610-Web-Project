@@ -3,9 +3,9 @@ var WidgetSchema = require("../widget/widget.schema.server");
 
 var CourseSchema = mongoose.Schema({
   _faculty: {type: mongoose.Schema.Types.ObjectId, ref: "UserModel"},
-  name: String,
+  number: String,
   description: String,
-  title: String,
+  name: String,
   rating: Number,
   sumRating: Number,
   numRating: Number,

@@ -3,7 +3,7 @@ module.exports = function(app) {
   app.get("/api/course/:courseId", findCourseById);
   app.put("/api/course/:courseId", updateCourse);
   app.delete("/api/course/:courseId", deleteCourse);
-  app.get("/api/coursename/:courseName", findCourseByName);
+  app.get("/api/coursenumber/:courseNumber", findCourseByNumber);
   app.get("/api/signaturecourses", signatureCourses);
 
   var courseModel = require("../models/course/course.model.server");
@@ -41,9 +41,9 @@ module.exports = function(app) {
     );
   }
 
-  function findCourseByName(req, res) {
-    var courseName = req.params.courseName;
-    courseModel.findCourseByName(courseName).then(
+  function findCourseByNumber(req, res) {
+    var courseNumber = req.params.courseNumber;
+    courseModel.findCourseByNumber(courseNumber).then(
       function (course) {
         res.json(course);
       },

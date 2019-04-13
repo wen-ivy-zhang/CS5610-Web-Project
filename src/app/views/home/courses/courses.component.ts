@@ -13,9 +13,9 @@ export class CoursesComponent implements OnInit {
   // courses: Course[];
 
   courses = [
-    {name: 'CS5001', title: 'Python', rating: 4.0, numRating: 2},
-    {name: 'CS5800', title: 'Algorithm', rating: 5.0, numRating: 6},
-    {name: 'CS5610', title: 'Web Dev', rating: 4.5, numRating: 4}
+    {number: 'CS5001', name: 'Python', rating: 4.0, numRating: 2},
+    {number: 'CS5800', name: 'Algorithm', rating: 5.0, numRating: 6},
+    {number: 'CS5610', name: 'Web Dev', rating: 4.5, numRating: 4}
     ];
 
   constructor(private courseService: CourseService) {

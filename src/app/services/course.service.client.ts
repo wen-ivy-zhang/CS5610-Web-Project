@@ -35,8 +35,8 @@ export class CourseService {
       );
   }
 
-  findCourseByName(courseName: String) {
-    const url = this.baseUrl + '/api/coursename/' + courseName;
+  findCourseByNumber(courseNumber: String) {
+    const url = this.baseUrl + '/api/coursenumber/' + courseNumber;
     return this._http.get(url)
       .pipe(
         map(

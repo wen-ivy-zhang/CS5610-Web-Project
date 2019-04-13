@@ -26,14 +26,7 @@ export class UserService {
       lastName: lastName,
       email: email
     };
-    return this._http.post(this.baseUrl + '/api/register', user, { withCredentials: true })
-      .pipe(
-        map(
-          (response: Response) => {
-            return response.json();
-          }
-        )
-      );
+    return this._http.post(this.baseUrl + '/api/register', user, { withCredentials: true });
   }
 
   login(username: string, password: string) {
@@ -41,12 +34,7 @@ export class UserService {
       username: username,
       password: password
     };
-    return this._http.post(this.baseUrl + '/api/login', body, { withCredentials: true })
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.post(this.baseUrl + '/api/login', body, { withCredentials: true });
   }
 
   loggedIn() {

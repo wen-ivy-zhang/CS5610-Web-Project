@@ -5,7 +5,7 @@ var UserModel = require("../user/user.model.server");
 
 CourseModel.createCourseForProf = createCourseForProf;
 CourseModel.findCourseById = findCourseById;
-CourseModel.findCourseByName = findCourseByName;
+CourseModel.findCourseByNumber = findCourseByNumber;
 CourseModel.updateCourse = updateCourse;
 CourseModel.deleteCourse = deleteCourse;
 CourseModel.signatureCourses = signatureCourses;
@@ -31,8 +31,8 @@ function findCourseById(courseId) {
   return CourseModel.findById(courseId);
 }
 
-function findCourseByName(courseName) {
-  return CourseModel.findOne({name: courseName});
+function findCourseByNumber(courseNumber) {
+  return CourseModel.findOne({name: courseNumber});
 }
 
 function updateCourse(courseId, course) {
