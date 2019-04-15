@@ -9,6 +9,12 @@ import { CoursesComponent } from './views/home/courses/courses.component';
 // user component
 import { StudentComponent } from './views/user/student/student.component';
 import { FacultyComponent } from './views/user/faculty/faculty.component';
+import {AdminComponent} from './views/user/admin/admin/admin.component';
+import {AdminEditComponent} from './views/user/admin/admin-edit/admin-edit.component';
+import {FacultyEditComponent} from './views/user/admin/faculty-edit/faculty-edit.component';
+import {FacultyNewComponent} from './views/user/admin/faculty-new/faculty-new.component';
+import {StudentEditComponent} from './views/user/admin/student-edit/student-edit.component';
+import {StudentNewComponent} from './views/user/admin/student-new/student-new.component';
 
 // course component
 import { CourseEditComponent } from './views/course/faculty/course-edit/course-edit.component';
@@ -35,6 +41,12 @@ const routes: Routes = [
   {path: 'courses', component: CoursesComponent},
   {path: 'student', component: StudentComponent},
   {path: 'faculty', component: FacultyComponent},
+  {path: 'admin', component: AdminComponent},
+  {path: 'admin/edit', component: AdminEditComponent},
+  {path: 'admin/faculty', component: FacultyEditComponent},
+  {path: 'admin/faculty/new', component: FacultyNewComponent},
+  {path: 'admin/student', component: StudentEditComponent},
+  {path: 'admin/student/new', component: StudentNewComponent},
   // ...
 ];
 

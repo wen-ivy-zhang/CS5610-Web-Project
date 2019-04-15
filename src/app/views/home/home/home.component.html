@@ -66,9 +66,24 @@
   </div>
 </div>
 
-<nav class="navbar fixed-bottom navbar-expand-lg nav-neu justify-content-end">
-  <div class="font-weight-light text-white small">
-    Group Members: Wen Zhang, Zhe Feng
+<!--<nav class="navbar fixed-bottom navbar-expand-lg nav-neu justify-content-end">-->
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <!--this div is for test purpose only, will delete in prod-->
+  <div class="container-fluid row">
+    <div>
+      <button routerLink="admin" class="text-white btn">
+        admin
+      </button>
+      <a routerLink="faculty" class="text-white btn">
+        faculty
+      </a>
+      <a routerLink="student" class="text-white btn">
+        student
+      </a>
+    </div>
+    <div class="font-weight-light text-white small">
+      Group Members: Wen Zhang, Zhe Feng
+    </div>
   </div>
 </nav>
 
