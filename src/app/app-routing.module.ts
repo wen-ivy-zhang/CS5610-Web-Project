@@ -35,6 +35,12 @@ const routes: Routes = [
   {path: 'courses', component: CoursesComponent},
   {path: 'student', component: StudentComponent},
   {path: 'faculty', component: FacultyComponent},
+  {path: 'student/:uid/courses', component: StudentCourseListComponent},
+  {path: 'student/:uid/courses/new', component: StudentCourseNewComponent},
+  {path: 'student/:uid/courses/:cnum', component: RatingComponent},
+  {path: 'faculty/:uid/courses', component: FacultyCourseListComponent},
+  {path: 'faculty/:uid/courses/new', component: FacultyCourseNewComponent},
+  {path: 'faculty/:uid/courses/:cnum', component: CourseEditComponent},
   // ...
 ];
 

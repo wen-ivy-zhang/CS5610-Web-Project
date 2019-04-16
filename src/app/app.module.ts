@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 // home component
 import { HomeComponent } from './views/home/home/home.component';
@@ -79,7 +80,8 @@ import {CourseService} from './services/course.service.client';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BarRatingModule
   ],
   providers: [
     SharedService,
