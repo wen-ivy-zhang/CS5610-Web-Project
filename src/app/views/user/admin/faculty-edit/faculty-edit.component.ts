@@ -31,7 +31,7 @@ export class FacultyEditComponent implements OnInit {
   deleteUser(userId) {
     return this.userService.deleteUserInServer(userId).subscribe(
       () => {
-        // this.router.navigate(['/admin/professor']);
+        // this.router.navigate(['/admin/faculty']);
         this.ngOnInit(); // refresh current page
       }
     );
@@ -67,5 +67,4 @@ export class FacultyEditComponent implements OnInit {
       }
     );
   }
-
 }
