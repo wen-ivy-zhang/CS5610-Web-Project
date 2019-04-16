@@ -19,6 +19,14 @@
   git push -u origin <branch_name>
   ```
 
+### Testing Users
+| Role        | Username      | password|
+| ----------- |:-------------:| -------:|
+| Admin       | test_admin    | 1       |
+| Faculty     | test_faculty  | 1       |
+| Student     | test_student  | 1       |
+
+
 ### Useful Command Cheatsheet
   ```
   ng serve
