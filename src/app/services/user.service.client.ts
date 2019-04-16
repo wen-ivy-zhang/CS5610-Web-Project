@@ -5,7 +5,6 @@ import {environment} from '../../environments/environment';
 // import {environment} from '../../environments/environment.prod';
 import {SharedService} from './shared.service';
 import {Router} from '@angular/router';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -38,104 +37,43 @@ export class UserService {
   }
 
   loggedIn() {
-    return this._http.post(this.baseUrl + '/api/loggedIn', '', { withCredentials: true })
-      .pipe(
-        map(
-          (res: any) => {
-            const user = res.json();
-            if (user !== 0) {
-              this.sharedService.user = user;
-              return true;
-            } else {
-              this.router.navigate(['/login']);
-              return false;
-            }
-          }
-        )
-      );
+    return this._http.post(this.baseUrl + '/api/loggedIn', '', { withCredentials: true });
   }
 
   logout() {
-    return this._http.post(this.baseUrl + '/api/logout', '',{ withCredentials: true })
-      .pipe(
-        map(
-          (res: Response) => {
-            const data = res;
-          }
-        )
-      );
+    return this._http.post(this.baseUrl + '/api/logout', '',{ withCredentials: true });
   }
 
   findUserById(userId: String) {
-    return this._http.get(this.baseUrl + '/api/user/' + userId)
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.get(this.baseUrl + '/api/user/' + userId);
   }
 
   findCoursesByUser(userId: String) {
-    return this._http.get(this.baseUrl + '/api/user/' + userId + '/course')
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.get(this.baseUrl + '/api/user/' + userId + '/course');
   }
 
   addCourseForStudent(userId: String, courseId: String, user: User) {
-    return this._http.put(this.baseUrl + '/api/student/' + userId + '/course/' + courseId, user)
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.put(this.baseUrl + '/api/student/' + userId + '/course/' + courseId, user);
   }
 
   deleteCourseForStudent(userId: String, courseId: String) {
-    return this._http.delete(this.baseUrl + '/api/student/' + userId + '/course/' + courseId)
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.delete(this.baseUrl + '/api/student/' + userId + '/course/' + courseId);
   }
 
   updateUserInServer(userId: String, user: User) {
-    return this._http.put(this.baseUrl + '/api/user/' + userId, user)
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.put(this.baseUrl + '/api/user/' + userId, user);
   }
 
   deleteUserInServer(userId: String) {
-    return this._http.delete(this.baseUrl + '/api/user/' + userId)
-      .pipe(
-        map((response: Response) => {
-          return response;
-        })
-      );
+    return this._http.delete(this.baseUrl + '/api/user/' + userId);
   }
 
   findAllFaculty() {
-    return this._http.get(this.baseUrl + '/api/faculty')
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.get(this.baseUrl + '/api/faculty');
   }
 
   findAllStudents() {
-    return this._http.get(this.baseUrl + '/api/students')
-      .pipe(
-        map((response: Response) => {
-          return response.json();
-        })
-      );
+    return this._http.get(this.baseUrl + '/api/students');
   }
 
 
