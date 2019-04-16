@@ -10,31 +10,29 @@
 
 
 <div class="container">
-  <div class="container">
-    <br/>
-    <h3 class="text-capitalize font-italic">hello {{user.username}}!</h3>
-    <br/>
+  <br/>
+  <h3 class="text-capitalize font-italic">hello {{user.username}}!</h3>
+  <br/>
 
-    <a class="btn btn-outline-warning btn-block text-warning" routerLink="faculty">
-      <i class="fas fa-chalkboard-teacher"></i>
-      Edit Faculty
-    </a>
-    <br/>
+  <a class="btn btn-outline-warning btn-block text-warning" routerLink="faculty">
+    <i class="fas fa-chalkboard-teacher"></i>
+    Edit Faculty
+  </a>
+  <br/>
 
-    <a class="btn btn-outline-info btn-block text-info" routerLink="student">
-      <i class="fas fa-user-graduate"></i>
-      Edit Students
-    </a>
-    <br/>
+  <a class="btn btn-outline-info btn-block text-info" routerLink="student">
+    <i class="fas fa-user-graduate"></i>
+    Edit Students
+  </a>
+  <br/>
 
-    <a class="btn btn-outline-success btn-block text-success" routerLink="edit">
-      <i class="fas fa-portrait"></i>
-      Edit Profile
-    </a>
-    <br/>
+  <a class="btn btn-outline-success btn-block text-success" routerLink="edit">
+    <i class="fas fa-portrait"></i>
+    Edit Profile
+  </a>
+  <br/>
 
-    <a class="btn btn-danger btn-block text-white" (click)="logout()" routerLink="">Logout</a>
-  </div>
+  <a class="btn btn-danger btn-block" (click)="logout()" routerLink="">Logout</a>
 </div>
 
 <nav class="navbar fixed-bottom navbar-expand-lg nav-neu">

@@ -43,9 +43,9 @@ export class FacultyEditComponent implements OnInit {
     this.userService.findUserById(userId).subscribe(
       (user: User) => {
         this.user = user;
+        console.log(this.user);
       }
     );
-    console.log(this.user);
     if (this.user) {
       this.modalFlag = true;
       console.log('set modalFlag to true!!!');

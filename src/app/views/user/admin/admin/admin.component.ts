@@ -11,8 +11,8 @@ import {UserService} from '../../../../services/user.service.client';
 })
 export class AdminComponent implements OnInit {
 
-  // user: User;
-  user =  new User('1', 'alice', 'alice', 'Alice', 'Alice', 'alice@test.com', 'ADMIN');
+  user: User;
+  // user =  new User('1', 'alice', 'alice', 'Alice', 'Alice', 'alice@test.com', 'ADMIN');
 
   constructor(private userService: UserService,
               private sharedService: SharedService,
@@ -26,7 +26,7 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.user = this.sharedService.user;
+    this.user = this.sharedService.user;
   }
 
 

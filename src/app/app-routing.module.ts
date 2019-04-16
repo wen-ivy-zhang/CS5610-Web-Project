@@ -47,6 +47,10 @@ const routes: Routes = [
   {path: 'admin/faculty/new', component: FacultyNewComponent},
   {path: 'admin/student', component: StudentEditComponent},
   {path: 'admin/student/new', component: StudentNewComponent},
+  // dummy routes for testing
+  {path: 'faculty/courses', component: CoursesComponent},
+  {path: 'faculty/courses/new', component: CoursesComponent},
+  {path: 'student/courses', component: CoursesComponent},
   // ...
 ];
 

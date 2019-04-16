@@ -11,8 +11,8 @@ import {User} from '../../../../models/user.model.client';
 })
 export class AdminEditComponent implements OnInit {
 
-  // user: User;
-  user =  new User('1', 'alice', 'alice', 'Alice', 'Alice', 'alice@test.com', 'admin');
+  user: User;
+  // user =  new User('1', 'alice', 'alice', 'Alice', 'Alice', 'alice@test.com', 'admin');
 
   constructor(private userService: UserService,
               private router: Router,
@@ -38,7 +38,7 @@ export class AdminEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.user = this.sharedService.user;
+    this.user = this.sharedService.user;
   }
 
 }
