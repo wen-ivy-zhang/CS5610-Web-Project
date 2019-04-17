@@ -1,3 +1,39 @@
-<p>
-  faculty works!
-</p>
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand text-white" routerLink="./">
+        Dashboard
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <br/>
+  <h3 class="text-capitalize font-italic">hello {{user.username}}!</h3>
+  <br/>
+
+  <a class="btn btn-outline-primary btn-block" routerLink="/faculty/courses">
+    <i class="fas fa-book-reader"></i>
+    View your courses
+  </a>
+  <br/>
+
+  <a class="btn btn-outline-info btn-block" routerLink="/faculty/courses/new">
+    <i class="fas fa-swatchbook"></i>
+    Add new courses
+  </a>
+  <br/>
+
+  <a class="btn btn-danger btn-block" (click)="logout()" routerLink="">Logout</a>
+
+</div>
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>

@@ -1,3 +1,54 @@
-<p>
-  admin-edit works!
-</p>
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="navbar-header">
+      <a routerLink="../" class="navbar-brand text-white">
+          <span class="fas fa-chevron-left"></span>
+      </a>
+      <a class="navbar-brand text-white" routerLink="./">
+        Edit Admin
+      </a>
+    </div>
+  </div>
+  <a routerLink="../" class="navbar-brand text-white">
+    <span class="fas fa-check"></span>
+  </a>
+</nav>
+
+<div class="container">
+  <br/>
+  <h1 class="font-weight-lighter">
+    <i class="far fa-id-card text-secondary"></i>
+    Profile
+  </h1>
+  <div class="container">
+    <label for="username">Username</label>
+    <input id="username" [(ngModel)]="user.username" class="form-control"/>
+
+    <label for="firstName">FirstName</label>
+    <input id="firstName" [(ngModel)]="user.firstName" class="form-control"/>
+
+    <label for="lastname">LastName</label>
+    <input id="lastname" [(ngModel)]="user.lastName" class="form-control"/>
+
+    <label for="email">Email</label>
+    <input id="email" [(ngModel)]="user.email" class="form-control"/>
+
+    <br/>
+
+    <button class="btn btn-primary btn-block" (click)="updateUser(user._id, user)">Update</button>
+    <button class="btn btn-danger btn-block" (click)="deleteUser(user._id)">Delete</button>
+    <button class="btn btn-secondary btn-block" routerLink="../">Cancel</button>
+  </div>
+</div>
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+  <a routerLink="../" class="navbar-brand text-white">
+    <span class="fas fa-portrait"></span>
+  </a>
+</nav>

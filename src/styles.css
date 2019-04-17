@@ -26,3 +26,16 @@ thead.thead-neu {
 small {
   font-size: xx-small;
 }
+
+.btn-space {
+  margin-right: 5px;
+}
+
+.actions {
+  white-space: nowrap;
+  text-align: center;
+}
+
+/*.modal {*/
+  /*display: block;*/
+/*}*/

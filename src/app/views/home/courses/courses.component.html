@@ -2,7 +2,7 @@
   <div class="container-fluid row">
     <div class="pull-left">
       <a routerLink="/" class="navbar-brand text-white">
-        <span class="fas fa-chevron-left"></span>
+        <i class="fas fa-certificate"></i>
       </a>
       <a routerLink="./" class="navbar-brand text-white ml-4">
         Signature Courses
@@ -24,8 +24,8 @@
     <tbody>
     <tr *ngFor="let course of courses">
       <th scope="row">{{course.number}}</th>
-      <td>{{course.number}}</td>
       <td>{{course.name}}</td>
+      <td>{{course.rating}}</td>
       <td>{{course.numRating}}</td>
     </tr>
     </tbody>
