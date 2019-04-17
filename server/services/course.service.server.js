@@ -1,10 +1,22 @@
 module.exports = function(app) {
-  app.post("/api/user/:userId/course", createCourse);
+
+  // GET
   app.get("/api/course/:courseId", findCourseById);
-  app.put("/api/course/:courseId", updateCourse);
-  app.delete("/api/course/:courseId", deleteCourse);
   app.get("/api/coursenumber/:courseNumber", findCourseByNumber);
   app.get("/api/signaturecourses", signatureCourses);
+
+  // POST
+  app.post("/api/user/:userId/course", createCourse);
+
+  // PUT
+  app.put("/api/course/:courseId", updateCourse);
+  app.put("/api/course/:courseId/student/:userId", addStudentToCourse);
+
+
+  // DELETE
+  app.delete("/api/course/:courseId", deleteCourse);
+  app.delete("/api/course/:courseId/student/:userId/", deleteStudentFromCourse);
+
 
   var courseModel = require("../models/course/course.model.server");
 
@@ -49,6 +61,39 @@ module.exports = function(app) {
       },
       function (err) {
         res.sendStatus(400).send(err);
+      }
+    );
+  }
+
+  function addStudentToCourse(req, res) {
+    var courseId = req.params["courseId"];
+    var userId = req.params["userId"];
+
+    courseModel.findCourseById(courseId).then(
+      function (course) {
+        course.registeredStudents.push(userId);
+        courseModel.updateCourse(courseId, course).then();
+        res.json(course);
+      }
+    );
+  }
+
+  function deleteStudentFromCourse(req, res) {
+    var courseId = req.params["courseId"];
+    var userId = req.params["userId"];
+
+    courseModel.findCourseById(courseId).then(
+      function (course) {
+        var i;
+        for (i = 0; i < course.registeredStudents.length; i++) {
+          // HAVE TO USE "==", NOT "==="
+          if (course.registeredStudents[i] == userId) {
+            break;
+          }
+        }
+        course.registeredStudents.splice(i, 1);
+        courseModel.updateCourse(courseId, course).then();
+        res.json(course);
       }
     );
   }

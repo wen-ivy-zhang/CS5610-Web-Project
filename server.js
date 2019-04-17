@@ -1,6 +1,7 @@
 // prod mode: change server.js, environment.ts, model.js, widgets.server.service.js
 // const baseUrl = 'https://cs5610-project.herokuapp.com/';
-const baseUrl = 'http://localhost:4200';
+//const baseUrl = 'http://localhost:4200';
+const baseUrl = 'http://localhost:3200';
 // prod mode: change server.js, environment.ts, model.js, widgets.server.service.js (x2)
 
 // npm install express --save
