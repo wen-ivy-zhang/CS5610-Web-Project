@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BarRatingModule } from 'ngx-bar-rating';
+import { QuillEditorModule } from 'ngx-quill-editor';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 // home component
 import { HomeComponent } from './views/home/home/home.component';
@@ -40,11 +42,14 @@ import { WidgetHeaderComponent } from './views/widget/widget-edit/widget-header/
 import { WidgetHtmlComponent } from './views/widget/widget-edit/widget-html/widget-html.component';
 import { WidgetImageComponent } from './views/widget/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
+import { FlickrImageSearchComponent } from './views/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
 
 // services
 import {SharedService} from './services/shared.service';
 import {UserService} from './services/user.service.client';
 import {CourseService} from './services/course.service.client';
+import {WidgetService} from './services/widget.service.client';
+import {FlickrService} from './services/flickr.service.client';
 
 @NgModule({
   declarations: [
@@ -74,19 +79,24 @@ import {CourseService} from './services/course.service.client';
     WidgetHeaderComponent,
     WidgetHtmlComponent,
     WidgetImageComponent,
-    WidgetYoutubeComponent
+    WidgetYoutubeComponent,
+    FlickrImageSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BarRatingModule
+    BarRatingModule,
+    QuillEditorModule,
+    NgScrollbarModule
   ],
   providers: [
     SharedService,
     UserService,
-    CourseService
+    CourseService,
+    WidgetService,
+    FlickrService
   ],
   bootstrap: [AppComponent]
 })

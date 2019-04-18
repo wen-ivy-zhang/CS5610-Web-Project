@@ -1,3 +1,7 @@
+<div *ngIf="registerFlag" class = "alert alert-danger">
+  {{registerMsg}}
+</div>
+
 
 <nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
   <div class="container-fluid row">
@@ -41,7 +45,7 @@
 
       <tbody>
       <!--<tr *ngFor="let course of courses">-->
-        <th scope="row">{{tempCourse.number}}</th>
+        <th scope="row" routerLink = '/student/{{userId}}/courses/{{tempCourse.number}}/widget'>{{tempCourse.number}}</th>
         <td>{{tempCourse.name}}</td>
         <td>{{tempCourse.rating}}</td>
         <td>{{tempCourse.numRating}}</td>
@@ -53,7 +57,7 @@
           <button [disabled]="alreadyRegistered" class="btn btn-primary mr-2" (click)="RegisterCourse()">
             Register
           </button>
-        </td>>
+        </td>
 
       <!--</tr>-->
       </tbody>

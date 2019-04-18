@@ -1,3 +1,60 @@
-<p>
-  widget-html works!
-</p>
+
+<div *ngIf="errorFlag" class = "alert alert-danger">
+  {{errorMsg}}
+</div>
+
+<!--Header-->
+<form (ngSubmit)="updateHTML()" #updatehtml ="ngForm">
+  <nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+    <div class="container-fluid row">
+      <div class="pull-left">
+        <!--<a routerLink="/" class="navbar-brand text-white">-->
+        <a routerLink = "/faculty/{{userId}}/courses/{{courseNumber}}/widget" class="navbar-brand text-white">
+          <span class="fas fa-chevron-left"></span>
+        </a>
+        <a routerLink="./" class="navbar-brand text-white ml-4">
+          Widget Edit
+        </a>
+      </div>
+
+      <div class="pull-right">
+        <button class = "btn btn-primary btn-block" type = "submit">
+          <i class="fas fa-check fontawsome_icon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+</form>
+
+
+<form (ngSubmit)="deleteHTML()" #deletehtml ="ngForm">
+  <div class="container-fluid cl-container-padding">
+    <form>
+      <div class="form-group">
+        <label for = "Name"> Name </label>
+        <input [(ngModel)]="widget.name" type="text" class="form-control"
+               id="name" name="name" placeholder="{{widget.name}}" required>
+        <!--<span class="alert-class"-->
+        <!--*ngIf="flag">{{alert}}</span>-->
+      </div>
+
+      <!-- use with ngModel -->
+      <quill-editor [(ngModel)]="widget.text" name="text"></quill-editor>
+    </form>
+    <!--<a class = "btn btn-danger btn-block" href = "widget-list.html">Delete</a>-->
+    <button class = "btn btn-danger btn-block" type = "submit">
+      Delete
+    </button>
+  </div>
+</form>
+
+<!-- Footer -->
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>
+

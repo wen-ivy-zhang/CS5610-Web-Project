@@ -56,7 +56,9 @@ export class StudentCourseListComponent implements OnInit {
         this.courseService.deleteStudentFromCourse(this.tempCourse._id, this.userId).subscribe(
           (course: any) => {
             this.tempCourse = course;
-            this.router.navigate(['/student', this.userId, 'courses']);
+            console.log('refresh');
+            // this.router.navigate(['/student', this.userId, 'courses']);
+            this.ngOnInit();
           }
         );
       }

@@ -12,7 +12,15 @@
   </div>
 </nav>
 
-<div class="container mt-4">
+<div class="container">
+  <ng-scrollbar [invertX]="true"
+                [invertY]="true"
+                [trackX]="true"
+                [compact]="true"
+                [shown]="always"
+                [disableOnBreakpoints]="false"
+                [disabled]="false">
+
   <table class="table table-striped">
     <thead class="thead-neu">
     <tr>
@@ -24,7 +32,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let course of courses">
-      <th scope="row">{{course.number}}</th>
+      <th scope="row" routerLink = '/faculty/{{userId}}/courses/{{course.number}}/widget'>{{course.number}}</th>
       <td>{{course.name}}</td>
       <td>{{course.rating}}</td>
       <td>{{course.numRating}}</td>
@@ -34,19 +42,20 @@
       <!--</button>-->
       <td>
         <button class="btn btn-primary mr-2" (click)="editCourse(course.number)">
-          Rate
+          Edit
         </button>
-      </td>>
+      </td>
 
       <!--<td>-->
         <!--<button class="btn btn-primary mr-2" (click)="deleteCourse(course.number)">-->
           <!--Delete-->
         <!--</button>-->
-      <!--</td>>-->
+      <!--</td>-->
 
     </tr>
     </tbody>
   </table>
+  </ng-scrollbar>
 
   <button routerLink="/faculty/{{userId}}/courses/new" class="btn btn-secondary mr-2">
     Create Course

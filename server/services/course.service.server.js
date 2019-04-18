@@ -55,8 +55,10 @@ module.exports = function(app) {
 
   function findCourseByNumber(req, res) {
     var courseNumber = req.params.courseNumber;
+    console.log('server findCourseByNumber: ' + courseNumber);
     courseModel.findCourseByNumber(courseNumber).then(
       function (course) {
+        console.log(course);
         res.json(course);
       },
       function (err) {

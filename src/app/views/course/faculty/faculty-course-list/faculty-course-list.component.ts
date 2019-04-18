@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../../../services/user.service.client';
 import {CourseService} from '../../../../services/course.service.client';
+import {Course} from '../../../../models/course.model.client';
 
 @Component({
   selector: 'app-faculty-course-list',
@@ -11,7 +12,7 @@ import {CourseService} from '../../../../services/course.service.client';
 export class FacultyCourseListComponent implements OnInit {
 
   userId: String;
-  courses: any;
+  courses: Course[] = [];
 
   constructor(private userService: UserService,
               private courseService: CourseService,

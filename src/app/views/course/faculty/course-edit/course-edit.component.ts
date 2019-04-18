@@ -3,6 +3,7 @@ import {UserService} from '../../../../services/user.service.client';
 import {CourseService} from '../../../../services/course.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {ClassTimes, Course} from '../../../../models/course.model.client';
 
 @Component({
   selector: 'app-course-edit',
@@ -15,7 +16,9 @@ export class CourseEditComponent implements OnInit {
   @ViewChild('delete') deleteCourseFrom: NgForm;
   userId: String;
   courseNumber: String;
-  course: any;
+  classTimes = new ClassTimes('', '', '');
+  course: Course = new Course('', '', '', 0.0, 0.0,
+    this.classTimes, new Date(), new Date(), '', '');
   errorFlag: boolean;
   errorMsg = 'Course name is required!';
 
@@ -38,6 +41,8 @@ export class CourseEditComponent implements OnInit {
       (data: any) => {
         this.course = data;
         console.log('course id: ' + this.course._id);
+        console.log('course startDate: ' + this.course.startDate);
+        console.log('course endDare: ' + this.course.endDate);
       }
     );
   }

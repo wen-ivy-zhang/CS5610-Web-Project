@@ -32,7 +32,7 @@ function findCourseById(courseId) {
 }
 
 function findCourseByNumber(courseNumber) {
-  return CourseModel.findOne({name: courseNumber});
+  return CourseModel.findOne({number: courseNumber});
 }
 
 function updateCourse(courseId, course) {

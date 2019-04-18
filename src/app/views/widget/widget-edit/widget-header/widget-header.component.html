@@ -1,3 +1,64 @@
-<p>
-  widget-header works!
-</p>
+
+<div *ngIf="errorFlag" class = "alert alert-danger">
+  {{errorMsg}}
+</div>
+
+<form (ngSubmit)="updateHeading()" #updateheading ="ngForm">
+  <nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+    <div class="container-fluid row">
+      <div class="pull-left">
+        <!--<a routerLink="/" class="navbar-brand text-white">-->
+        <a routerLink = "/faculty/{{userId}}/courses/{{courseNumber}}/widget" class="navbar-brand text-white">
+          <span class="fas fa-chevron-left"></span>
+        </a>
+        <a routerLink="./" class="navbar-brand text-white ml-4">
+          Widget Edit
+        </a>
+      </div>
+
+      <div class="pull-right">
+        <button class = "btn btn-primary btn-block" type = "submit">
+          <i class="fas fa-check fontawsome_icon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+</form>
+
+<form (ngSubmit)="deleteHeading()" #deleteheading ="ngForm">
+  <div class="container-fluid cl-container-padding">
+    <form>
+      <div class = "form-group">
+        <label for = "headingname">Name</label>
+        <input [(ngModel)]="widget.name" type = "text" class="form-control"
+               id = "headingname" name="headingname" placeholder="{{widget.name}}">
+        <!--<input type = "text" class="form-control" id = "headingname" placeholder="Heading">-->
+      </div>
+      <div class = "form-group">
+        <label for = "text"> Text </label>
+        <input [(ngModel)]="widget.text" type = "text" class="form-control"
+               id = "text" name="text" placeholder="{{widget.text}}">
+      </div>
+      <div class = "form-group">
+        <label for = "size"> Size </label>
+        <input [(ngModel)]="widget.size" type = "text" class="form-control"
+               id = "size" name="size" placeholder="{{widget.size}}">
+      </div>
+    </form>
+    <!--<a class = "btn btn-danger btn-block" href = "widget-list.html">Delete</a>-->
+    <button class = "btn btn-danger btn-block" type = "submit">
+      Delete
+    </button>
+  </div>
+</form>
+
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>
+

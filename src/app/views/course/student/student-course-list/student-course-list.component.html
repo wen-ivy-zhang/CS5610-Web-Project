@@ -24,7 +24,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let course of courses">
-      <th scope="row">{{course.number}}</th>
+      <th scope="row" routerLink = '/student/{{userId}}/courses/{{course.number}}/widget'>{{course.number}}</th>
       <td>{{course.name}}</td>
       <td>{{course.rating}}</td>
       <td>{{course.numRating}}</td>
@@ -36,13 +36,13 @@
       <button class="btn btn-primary mr-2" (click)="rateCourse(course.number)">
         Rate
       </button>
-      </td>>
+      </td>
 
       <td>
       <button class="btn btn-primary mr-2" (click)="dropCourse(course.number)">
         Drop
       </button>
-      </td>>
+      </td>
 
     </tr>
     </tbody>

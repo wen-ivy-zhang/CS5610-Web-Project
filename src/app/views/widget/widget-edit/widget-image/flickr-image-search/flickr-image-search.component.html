@@ -1,0 +1,51 @@
+<!--Header-->
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="pull-left">
+      <!--<a routerLink="/" class="navbar-brand text-white">-->
+      <a routerLink = "/faculty/{{userId}}/courses/{{courseNumber}}/widget/{{widgetId}}" class="navbar-brand text-white">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a class="navbar-brand text-white ml-4">
+        Search Flickr
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!--Material on the page-->
+<div class = "container">
+  <div class="input-group">
+    <input [(ngModel)]="searchText" type="text" class="form-control">
+    <span class="input-group-btn">
+      <a (click)="searchPhotos()" class="btn btn-default" type="button">
+        <span class="glyphicon glyphicon-search"></span>
+      </a>
+    </span>
+  </div>
+
+  <div class="row">
+    <!--<div *ngFor = "let pic of photos['photo']"-->
+    <div *ngFor = "let pic of photos['photo']"
+         class="col-xs-4">
+      <img    (click)="selectPhoto(pic)"
+              width="100%"
+              [src] = "['https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '_s.jpg']"/>
+
+      <!--[src] = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_" + "s.jpg"/>-->
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>

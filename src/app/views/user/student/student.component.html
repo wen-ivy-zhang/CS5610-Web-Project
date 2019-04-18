@@ -15,7 +15,8 @@
   <h3 class="text-capitalize font-italic">hello {{user.username}}!</h3>
   <br/>
 
-  <a class="btn btn-outline-primary btn-block" routerLink="/student/courses">
+  <!--<a class="btn btn-outline-primary btn-block" routerLink="/student/courses">-->
+  <a class="btn btn-outline-primary btn-block" routerLink="/student/{{user._id}}/courses">
     <i class="fas fa-book-reader"></i>
     View your courses
   </a>

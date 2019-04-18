@@ -13,19 +13,22 @@
     </div>
 
     <div class="pull-right">
-      <a class="text-white btn" type="submit">
-        <!--Done-->
+      <!--<a class="text-white btn" type="submit">-->
+        <!--&lt;!&ndash;Done&ndash;&gt;-->
+        <!--<i class="fas fa-check fontawsome_icon"></i>-->
+      <!--</a>-->
+      <button class="btn btn-secondary mr-2" type = "submit">
         <i class="fas fa-check fontawsome_icon"></i>
-      </a>
+      </button>
     </div>
 
   </div>
 </nav>
-</form>>
+</form>
 
 
 <div class="container">
-  <h3>Please rate course {{courseNumber}} and provide some comments</h3>
+  <h4>Please rate course {{courseNumber}} and provide some comments</h4>
 
   <div class="stars container">
   <!--<div class="row">-->
@@ -33,13 +36,14 @@
     <div class="col-md-4">
       <section>
         <b>Rate (1 to 5)</b>
-        <bar-rating [(rate)]="rate" [max]="5"></bar-rating>
+        <bar-rating [(rate)]="rating" [max]="4" [theme]="'default'" [showText]="true"
+                    [titles]="['Bad', 'Mediocre' , 'Good', 'Awesome']"></bar-rating>
       </section>
     </div>
 
     <div>
       <textarea rows="10" class="form-control">{{comment}}</textarea>
-    </div>>
+    </div>
 
   <!--</div>-->
 

@@ -9,21 +9,34 @@
           <span class="fas fa-chevron-left"></span>
         </a>
         <a routerLink="./" class="navbar-brand text-white ml-4">
-          Register for Classes
+          Create Class
         </a>
       </div>
 
       <div class="pull-right">
-        <a class="text-white btn" type="submit" [disabled]="!newcourse.valid">
-          <!--Done-->
+        <!--<a class="text-white btn" type="submit" [disabled]="!newcourse.valid">-->
+          <!--&lt;!&ndash;Done&ndash;&gt;-->
+          <!--<i class="fas fa-check fontawsome_icon"></i>-->
+        <!--</a>-->
+
+        <button class="btn btn-secondary mr-2" type = "submit" [disabled]="!newcourse.valid">
           <i class="fas fa-check fontawsome_icon"></i>
-        </a>
+        </button>
       </div>
     </div>
   </nav>
 
 
+  <ng-scrollbar [invertX]="true"
+                [invertY]="true"
+                [trackX]="true"
+                [compact]="true"
+                [shown]="always"
+                [disableOnBreakpoints]="false"
+                [disabled]="false">
+
   <div class="container-fluid cl-container-padding">
+
     <div class = "form-group">
       <label for = "name"> Course Name</label>
       <input type = "text" name = "name" class = "form-control" id = "name" placeholder = "Course Name"
@@ -38,6 +51,12 @@
       <input type = "text" name = "number" class = "form-control" id = "number" placeholder="Course Number"
              ngModel required #number="ngModel"/>
     </div>
+
+      <div class = "form-group">
+        <label for = "description"> Course Description</label>
+        <input type = "text" name = "description" class = "form-control" id = "description" placeholder="Course Description"
+               ngModel required #description="ngModel"/>
+      </div>
 
     <div class = "form-group">
       <label for = "day"> Course Day</label>
@@ -82,6 +101,7 @@
     </div>
 
   </div>
+  </ng-scrollbar>
 
   <nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
     <div class="container-fluid">

@@ -18,7 +18,7 @@ export class RatingComponent implements OnInit {
   userId: String;
   courseNumber: String;
   course: any;
-  rate = 0.0;
+  rating = 0.0;
   comment = 'Please leave a comment here ...';
 
   constructor(private userService: UserService,
@@ -47,9 +47,9 @@ export class RatingComponent implements OnInit {
   submitRating() {
     this.course.comments.push(this.comment);
     this.course.numRating++;
-    this.course.sumRating = this.course.sumRating + this.rate;
+    this.course.sumRating = this.course.sumRating + this.rating;
     this.course.rating = this.course.sumRating / this.course.numRating;
-    console.log('rate: ' + this.rate + 'course overall rating: ' + this.course.rating);
+    console.log('rate: ' + this.rating + 'course overall rating: ' + this.course.rating);
 
     this.courseService.updateCourse(this.course._id, this.course).subscribe(
       (data: any) => {

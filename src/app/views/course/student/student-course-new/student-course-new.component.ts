@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Course} from '../../../../models/course.model.client';
 import {User} from '../../../../models/user.model.client';
 
+// @ts-ignore
 @Component({
   selector: 'app-student-course-new',
   templateUrl: './student-course-new.component.html',
@@ -23,6 +24,8 @@ export class StudentCourseNewComponent implements OnInit {
   searchFlag = false;
   alreadyRegistered = false;
   Message = 'No courses found!';
+  registerFlag = false;
+  registerMsg = 'Course Registered Successfully!';
 
   constructor(private userService: UserService,
               private courseService: CourseService,
@@ -82,6 +85,7 @@ export class StudentCourseNewComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.user = data;
+          this.registerFlag = true;
           this.alreadyRegistered = true;
         }
       );
