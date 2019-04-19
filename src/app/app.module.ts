@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarRatingModule } from 'ngx-bar-rating';
-import { QuillEditorModule } from 'ngx-quill-editor';
+import { QuillModule } from 'ngx-quill';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 
 // home component
@@ -24,6 +26,7 @@ import { FacultyEditComponent } from './views/user/admin/faculty-edit/faculty-ed
 import { FacultyNewComponent } from './views/user/admin/faculty-new/faculty-new.component';
 import { StudentEditComponent } from './views/user/admin/student-edit/student-edit.component';
 import { StudentNewComponent } from './views/user/admin/student-new/student-new.component';
+import { UserDialogComponent } from './views/user/user-dialog/user-dialog.component';
 
 // course component
 import { CourseEditComponent } from './views/course/faculty/course-edit/course-edit.component';
@@ -80,6 +83,7 @@ import {FlickrService} from './services/flickr.service.client';
     WidgetHtmlComponent,
     WidgetImageComponent,
     WidgetYoutubeComponent,
+    UserDialogComponent,
     FlickrImageSearchComponent
   ],
   imports: [
@@ -87,8 +91,13 @@ import {FlickrService} from './services/flickr.service.client';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     BarRatingModule,
-    QuillEditorModule,
+    QuillModule,
     NgScrollbarModule
   ],
   providers: [
@@ -98,6 +107,7 @@ import {FlickrService} from './services/flickr.service.client';
     WidgetService,
     FlickrService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [UserDialogComponent]
 })
 export class AppModule { }

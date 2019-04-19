@@ -3,8 +3,8 @@ import {WidgetService} from '../../../../services/widget.service.client';
 import {Widget} from '../../../../models/widget.model.client';
 import {Router, ActivatedRoute} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {environment} from '../../../../../environments/environment';
-
+// import {environment} from '../../../../../environments/environment';
+import {environment } from '../../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-widget-image',
