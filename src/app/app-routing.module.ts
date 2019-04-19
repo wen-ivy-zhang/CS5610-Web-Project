@@ -33,6 +33,7 @@ import { WidgetHeaderComponent } from './views/widget/widget-edit/widget-header/
 import { WidgetHtmlComponent } from './views/widget/widget-edit/widget-html/widget-html.component';
 import { WidgetImageComponent } from './views/widget/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
+import {FlickrImageSearchComponent} from './views/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -41,6 +42,12 @@ const routes: Routes = [
   {path: 'courses', component: CoursesComponent},
   {path: 'student', component: StudentComponent},
   {path: 'faculty', component: FacultyComponent},
+  {path: 'student/:uid/courses', component: StudentCourseListComponent},
+  {path: 'student/:uid/courses/new', component: StudentCourseNewComponent},
+  {path: 'student/:uid/courses/:cnum', component: RatingComponent},
+  {path: 'faculty/:uid/courses', component: FacultyCourseListComponent},
+  {path: 'faculty/:uid/courses/new', component: FacultyCourseNewComponent},
+  {path: 'faculty/:uid/courses/:cnum', component: CourseEditComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'admin/edit', component: AdminEditComponent},
   {path: 'admin/faculty', component: FacultyEditComponent},
@@ -51,6 +58,11 @@ const routes: Routes = [
   {path: 'faculty/courses', component: CoursesComponent},
   {path: 'faculty/courses/new', component: CoursesComponent},
   {path: 'student/courses', component: CoursesComponent},
+  {path: 'student/:uid/courses/:cnum/widget', component: WidgetViewComponent},
+  {path: 'faculty/:uid/courses/:cnum/widget', component: WidgetListComponent},
+  {path: 'user/:uid/courses/:cnum/widget/new', component: WidgetChooserComponent},
+  {path: 'user/:uid/courses/:cnum/widget/:wgid', component: WidgetEditComponent},
+  {path: 'user/:uid/courses/:cnum/widget/:wgid/flickr', component: FlickrImageSearchComponent},
   // ...
 ];
 

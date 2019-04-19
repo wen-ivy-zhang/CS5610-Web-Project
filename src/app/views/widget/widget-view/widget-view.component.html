@@ -1,3 +1,123 @@
-<p>
-  widget-view works!
-</p>
+
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="pull-left">
+      <!--<a routerLink="/" class="navbar-brand text-white">-->
+      <a routerLink = "/student/{{userId}}/courses" class="navbar-brand text-white">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a routerLink="./" class="navbar-brand text-white ml-4">
+        Course Widgets
+      </a>
+    </div>
+
+    <!--<div class="pull-right">-->
+      <!--<a class="text-white btn" routerLink = '/user/{{userId}}/courses/{{courseNumber}}/widget/new'>-->
+        <!--<i class="fas fa-plus fontawsome_icon"></i>-->
+      <!--</a>-->
+    <!--</div>-->
+  </div>
+</nav>
+
+
+
+<div class="container-fluid cl-container-padding">
+  <div class="widget-list">
+    <!--<ul class="list-group cl-list-group-borderless">-->
+    <div *ngFor = "let widget of widgets">
+      <div [ngSwitch]="widget.widgetType">
+        <div class="jga-widget">
+
+          <!--<div class="jga-widget-tool">-->
+          <!--<a [routerLink]="['/user', 'website', websiteId, 'page', pageId, 'widget', widget._id]">-->
+          <!--<span class="glyphicon glyphicon-cog"> </span>-->
+          <!--</a>-->
+          <!--<span class="glyphicon glyphicon-align-justify"></span>-->
+          <!--</div>-->
+
+          <div *ngSwitchCase="'HEADING'">
+            <!--<a routerLink = '/user/{{userId}}/courses/{{courseNumber}}/widget/{{widget._id}}' class="navbar-link float-right">-->
+              <!--<i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>-->
+            <!--</a>-->
+            <div [ngSwitch]="widget['size']">
+              <div *ngSwitchCase="1">
+                <h1>{{ widget['text'] }}</h1>
+              </div>
+              <div *ngSwitchCase="2">
+                <h2>{{ widget['text'] }}</h2>
+              </div>
+              <div *ngSwitchCase="3">
+                <h3>{{ widget['text'] }}</h3>
+              </div>
+              <div *ngSwitchCase="4">
+                <h4>{{ widget['text'] }}</h4>
+              </div>
+              <div *ngSwitchCase="5">
+                <h5>{{ widget['text'] }}</h5>
+              </div>
+              <div *ngSwitchCase="6">
+                <h6>{{ widget['text'] }}</h6>
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'YOUTUBE'" class="youtube-widget">
+            <!--<a routerLink = '/user/{{userId}}/courses/{{courseNumber}}/widget/{{widget._id}}' class="navbar-link float-right">-->
+              <!--<i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>-->
+            <!--</a>-->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe width="500" height="315" [src]='sanitizer.bypassSecurityTrustResourceUrl(widget.url)' frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture allowfullscreen" ></iframe>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'IMAGE'">
+            <div>
+              <!--<a routerLink = '/user/{{userId}}/courses/{{courseNumber}}/widget/{{widget._id}}' class="navbar-link float-right">-->
+                <!--<i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>-->
+              <!--</a>-->
+              <img class="img-responsive img-rounded cl-widget-images"
+                   src="{{widget.url}}">
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'HTML'">
+            <!--<a routerLink = '/user/{{userId}}/courses/{{courseNumber}}/widget/{{widget._id}}' class="navbar-link float-right">-->
+              <!--&lt;!&ndash;<span class="glyphicon glyphicon-menu-hamburger"></span>&ndash;&gt;-->
+              <!--<i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>-->
+            <!--</a>-->
+            <div [innerHTML] = "widget.text"></div>
+          </div>
+
+          <!--<div *ngSwitchCase="'TEXT'">-->
+          <!--<a routerLink = '/user/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget/{{widget._id}}' class="navbar-link float-right">-->
+          <!--<i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>-->
+          <!--</a>-->
+          <!--<div *ngIf="widget.formatted">-->
+          <!--<quill-editor [(ngModel)]="widget.text" name="text"></quill-editor>-->
+          <!--</div>-->
+
+          <!--<input *ngIf="!widget.formatted && (!widget.rows || widget.rows===1)"-->
+          <!--placeholder="{{widget.placeholder}}" class="form-control"/>-->
+
+          <!--<textarea *ngIf="!widget.formatted && (widget.rows > 1)"-->
+          <!--rows="{{widget.rows}}" placeholder="{{widget.placeholder}}"-->
+          <!--class="form-control">{{widget.text}}</textarea>-->
+          <!--</div>-->
+
+        </div>
+      </div>
+    </div>
+    <!--</ul>-->
+  </div>
+</div>
+
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>

@@ -7,6 +7,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarRatingModule } from 'ngx-bar-rating';
+import { QuillModule } from 'ngx-quill';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 // home component
 import { HomeComponent } from './views/home/home/home.component';
@@ -23,6 +26,7 @@ import { FacultyEditComponent } from './views/user/admin/faculty-edit/faculty-ed
 import { FacultyNewComponent } from './views/user/admin/faculty-new/faculty-new.component';
 import { StudentEditComponent } from './views/user/admin/student-edit/student-edit.component';
 import { StudentNewComponent } from './views/user/admin/student-new/student-new.component';
+import { UserDialogComponent } from './views/user/user-dialog/user-dialog.component';
 
 // course component
 import { CourseEditComponent } from './views/course/faculty/course-edit/course-edit.component';
@@ -41,12 +45,14 @@ import { WidgetHeaderComponent } from './views/widget/widget-edit/widget-header/
 import { WidgetHtmlComponent } from './views/widget/widget-edit/widget-html/widget-html.component';
 import { WidgetImageComponent } from './views/widget/widget-edit/widget-image/widget-image.component';
 import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtube/widget-youtube.component';
+import { FlickrImageSearchComponent } from './views/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
 
 // services
 import {SharedService} from './services/shared.service';
 import {UserService} from './services/user.service.client';
 import {CourseService} from './services/course.service.client';
-import { UserDialogComponent } from './views/user/user-dialog/user-dialog.component';
+import {WidgetService} from './services/widget.service.client';
+import {FlickrService} from './services/flickr.service.client';
 
 @NgModule({
   declarations: [
@@ -77,7 +83,8 @@ import { UserDialogComponent } from './views/user/user-dialog/user-dialog.compon
     WidgetHtmlComponent,
     WidgetImageComponent,
     WidgetYoutubeComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    FlickrImageSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -88,12 +95,17 @@ import { UserDialogComponent } from './views/user/user-dialog/user-dialog.compon
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BarRatingModule,
+    QuillModule,
+    NgScrollbarModule
   ],
   providers: [
     SharedService,
     UserService,
-    CourseService
+    CourseService,
+    WidgetService,
+    FlickrService
   ],
   bootstrap: [AppComponent],
   entryComponents: [UserDialogComponent]

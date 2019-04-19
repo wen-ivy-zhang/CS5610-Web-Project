@@ -1,3 +1,70 @@
-<p>
-  widget-youtube works!
-</p>
+
+<div *ngIf="errorFlag" class = "alert alert-danger">
+  {{errorMsg}}
+</div>
+
+<form (ngSubmit)="updateYoutube()" #updateyoutube ="ngForm">
+  <nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+    <div class="container-fluid row">
+      <div class="pull-left">
+        <!--<a routerLink="/" class="navbar-brand text-white">-->
+        <a routerLink = "/faculty/{{userId}}/courses/{{courseNumber}}/widget" class="navbar-brand text-white">
+          <span class="fas fa-chevron-left"></span>
+        </a>
+        <a routerLink="./" class="navbar-brand text-white ml-4">
+          Widget Edit
+        </a>
+      </div>
+
+      <div class="pull-right">
+        <button class = "btn btn-primary btn-block" type = "submit">
+          <i class="fas fa-check fontawsome_icon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+</form>
+
+
+<form (ngSubmit)="deleteYoutube()" #deleteyoutube ="ngForm">
+  <div class="container-fluid cl-container-padding">
+    <form>
+      <div class = "form-group">
+        <label for = "name">Name</label>
+        <!--<input type = "text" class="form-control" id = "name" placeholder="YouTube">-->
+        <input [(ngModel)]="widget.name" type="text" class="form-control"
+               id="name" name="name" placeholder="{{widget.name}}" required>
+      </div>
+      <div class = "form-group">
+        <label for = "text"> Text</label>
+        <!--<input type = "text" class="form-control" id = "text" placeholder="Description of the video">-->
+        <input [(ngModel)] = "widget.text" type = "text" class = "form-control"
+               id = "text" name = "text" placeholder = "{{widget.text}}">
+      </div>
+      <div class = "form-group">
+        <label for = "URL"> URL </label>
+        <input [(ngModel)] = "widget.url" type = "url" class = "form-control"
+               id = "URL" name = "URL" placeholder = "{{widget.url}}">
+      </div>
+      <div class = "form-group">
+        <label for = "width"> Width</label>
+        <input [(ngModel)] = "widget.width" type = "text" class = "form-control"
+               id = "width" name = "width" placeholder = "{{widget.width}}">
+      </div>
+    </form>
+    <!--<a class = "btn btn-danger btn-block" href = "widget-list.html">Delete</a>-->
+    <button class = "btn btn-danger btn-block" type = "submit">
+      Delete
+    </button>
+  </div>
+</form>
+
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>

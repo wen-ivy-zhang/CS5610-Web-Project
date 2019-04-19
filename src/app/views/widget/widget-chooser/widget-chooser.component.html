@@ -1,3 +1,69 @@
-<p>
-  widget-chooser works!
-</p>
+
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="pull-left">
+      <!--<a routerLink="/" class="navbar-brand text-white">-->
+      <a routerLink = "/faculty/{{userId}}/courses/{{courseNumber}}/widget" class="navbar-brand text-white">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a routerLink="./" class="navbar-brand text-white ml-4">
+        Choose Widget
+      </a>
+    </div>
+
+    <!--<div class="pull-right">-->
+      <!--<a class="text-white btn" routerLink = '/user/{{userId}}/courses/{{courseNumber}}/widget/new'>-->
+        <!--<i class="fas fa-plus fontawsome_icon"></i>-->
+      <!--</a>-->
+    <!--</div>-->
+  </div>
+</nav>
+
+
+<div class="container-fluid cl-container-padding">
+  <ul class="list-group cl-list-group-borderless">
+    <!--<form (ngSubmit)="createWidget('HEADING')" #h ="ngForm">-->
+    <li class="list-group-item cl-list-item-borderless">
+      <!--<a type = "submit">Header</a>-->
+      <!--{{widget.widgetType}}='HEADING'-->
+      <!--<a [(ngModel)]="widget.widgetType" name="widgetType" #HEADING-->
+      <!--routerLink = '/user/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget/{{widgetId}}'>Header</a>-->
+      <a (click) = "createWidget('HEADING')"> Header </a>
+    </li>
+    <!--</form>-->
+
+    <li class="list-group-item cl-list-item-borderless">
+      <!--<a routerLink = '/user/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget/new'>HTML</a>-->
+      <a (click) = "createWidget('HTML')"> HTML </a>
+    </li>
+
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--&lt;!&ndash;<a routerLink = '/user/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget/new'>Text Input</a>&ndash;&gt;-->
+      <!--<a (click) = "createWidget('TEXT')"> TEXT </a>-->
+    <!--</li>-->
+
+    <li class="list-group-item cl-list-item-borderless">
+      <!--<a href="widget-image.html">Image</a>-->
+      <!--<a routerLink = '/user/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget/{{widgetId}}'>Image</a>-->
+      <a (click) = "createWidget('IMAGE')"> Image </a>
+    </li>
+
+    <li class="list-group-item cl-list-item-borderless">
+      <!--<a href="widget-youtube.html">You Tube</a>-->
+      <!--<a routerLink = '/user/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget/{{widgetId}}'>YouTube</a>-->
+      <a (click) = "createWidget('YOUTUBE')"> YouTube </a>
+    </li>
+
+  </ul>
+</div>
+
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>
+

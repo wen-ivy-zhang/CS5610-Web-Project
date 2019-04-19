@@ -1,3 +1,61 @@
-<p>
-  rating works!
-</p>
+
+<form (ngSubmit)="submitRating()" #f ="ngForm">
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="pull-left">
+      <!--<a routerLink="/" class="navbar-brand text-white">-->
+      <a routerLink = "/student/{{userId}}/courses" class="navbar-brand text-white">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a routerLink="./" class="navbar-brand text-white ml-4">
+        Rate Course
+      </a>
+    </div>
+
+    <div class="pull-right">
+      <!--<a class="text-white btn" type="submit">-->
+        <!--&lt;!&ndash;Done&ndash;&gt;-->
+        <!--<i class="fas fa-check fontawsome_icon"></i>-->
+      <!--</a>-->
+      <button class="btn btn-secondary mr-2" type = "submit">
+        <i class="fas fa-check fontawsome_icon"></i>
+      </button>
+    </div>
+
+  </div>
+</nav>
+</form>
+
+
+<div class="container">
+  <h4>Please rate course {{courseNumber}} and provide some comments</h4>
+
+  <div class="stars container">
+  <!--<div class="row">-->
+
+    <div class="col-md-4">
+      <section>
+        <b>Rate (1 to 5)</b>
+        <bar-rating [(rate)]="rating" [max]="4" [theme]="'default'" [showText]="true"
+                    [titles]="['Bad', 'Mediocre' , 'Good', 'Awesome']"></bar-rating>
+      </section>
+    </div>
+
+    <div>
+      <textarea rows="10" class="form-control">{{comment}}</textarea>
+    </div>
+
+  <!--</div>-->
+
+</div>
+</div>
+
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>

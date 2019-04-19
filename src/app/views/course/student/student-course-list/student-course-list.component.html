@@ -1,3 +1,66 @@
-<p>
-  student-course-list works!
-</p>
+
+<nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+  <div class="container-fluid row">
+    <div class="pull-left">
+      <a routerLink="/" class="navbar-brand text-white">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a routerLink="./" class="navbar-brand text-white ml-4">
+        My Courses
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <table class="table table-striped">
+    <thead class="thead-neu">
+    <tr>
+      <th scope="col">Course Number</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Average Rating</th>
+      <th scope="col">Number of Ratings</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of courses">
+      <th scope="row" routerLink = '/student/{{userId}}/courses/{{course.number}}/widget'>{{course.number}}</th>
+      <td>{{course.name}}</td>
+      <td>{{course.rating}}</td>
+      <td>{{course.numRating}}</td>
+
+      <!--<button routerLink="./rate" class="btn btn-secondary mr-2">-->
+        <!--Signature Courses-->
+      <!--</button>-->
+      <td>
+      <button class="btn btn-primary mr-2" (click)="rateCourse(course.number)">
+        Rate
+      </button>
+      </td>
+
+      <td>
+      <button class="btn btn-primary mr-2" (click)="dropCourse(course.number)">
+        Drop
+      </button>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+
+  <button routerLink="/student/{{userId}}/courses/new" class="btn btn-secondary mr-2">
+    Register Course
+  </button>
+
+</div>
+
+<nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand text-white">
+      <span class="fas fa-paw mr-1"></span>
+      Home
+    </a>
+  </div>
+</nav>
+
+

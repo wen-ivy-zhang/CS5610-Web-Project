@@ -1,3 +1,117 @@
-<p>
-  course-edit works!
-</p>
+
+<div *ngIf="errorFlag" class = "alert alert-danger">
+  {{errorMsg}}
+</div>
+
+<form (ngSubmit)="updateCourse()" #update ="ngForm">
+  <nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
+    <div class="container-fluid row">
+      <div class="pull-left">
+        <!--<a routerLink="/" class="navbar-brand text-white">-->
+        <a routerLink = "/faculty/{{userId}}/courses" class="navbar-brand text-white">
+          <span class="fas fa-chevron-left"></span>
+        </a>
+        <a routerLink="./" class="navbar-brand text-white ml-4">
+          Edit Class
+        </a>
+      </div>
+
+      <div class="pull-right">
+        <!--<a class="text-white btn" type="submit">-->
+          <!--&lt;!&ndash;Done&ndash;&gt;-->
+          <!--<i class="fas fa-check fontawsome_icon"></i>-->
+        <!--</a>-->
+        <button class="btn btn-secondary mr-2" type = "submit">
+          <i class="fas fa-check fontawsome_icon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+</form>
+
+<form (ngSubmit)="deleteCourse()" #delete ="ngForm">
+  <div class="container-fluid cl-container-padding mb-5" style="height: 600px;">
+    <ng-scrollbar [invertX]="true"
+                  [invertY]="true"
+                  [trackX]="true"
+                  [compact]="true"
+                  [shown]="always"
+                  [disableOnBreakpoints]="false"
+                  [disabled]="false">
+
+    <div class = "form-group">
+      <label for = "name"> Course Name</label>
+      <input [(ngModel)]="course.name" type = "text" name = "name" class = "form-control"
+             id = "name" placeholder="{{course.name}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "number"> Course Number</label>
+      <input [(ngModel)]="course.number" type = "text" name = "number" class = "form-control"
+             id = "number" placeholder="{{course.number}}"/>
+    </div>
+
+      <div class = "form-group">
+        <label for = "description"> Course Description</label>
+        <input [(ngModel)]="course.description" type = "text" name = "description" class = "form-control"
+               id = "description" placeholder="{{course.description}}"/>
+      </div>
+
+    <div class = "form-group">
+      <label for = "day"> Course Day</label>
+      <input [(ngModel)]="course.classTimes.day" type = "text" name = "day" class = "form-control"
+             id = "day" placeholder="{{course.classTimes.day}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "startTime"> Course StartTime</label>
+      <input [(ngModel)]="course.classTimes.startTime" type = "text" name = "startTime" class = "form-control"
+             id = "startTime" placeholder="{{course.classTimes.startTime}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "endTime"> Course endTime</label>
+      <input [(ngModel)]="course.classTimes.endTime" type = "text" name = "endTime" class = "form-control"
+             id = "endTime" placeholder="{{course.classTimes.endTime}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "startDate"> Course StartDate</label>
+      <input [(ngModel)]="course.startDate" type = "date" name = "startDate" class = "form-control"
+             id = "startDate" placeholder="{{course.startDate}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "endDate"> Course endDate</label>
+      <input [(ngModel)]="course.endDate" type = "date" name = "endDate" class = "form-control"
+             id = "endDate" placeholder="{{course.endDate}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "term"> Course Term</label>
+      <input [(ngModel)]="course.term" type = "text" name = "term" class = "form-control"
+             id = "term" placeholder="{{course.term}}"/>
+    </div>
+
+    <div class = "form-group">
+      <label for = "location"> Course Location</label>
+      <input [(ngModel)]="course.location" type = "text" name = "location" class = "form-control"
+             id = "location" placeholder="{{course.location}}"/>
+    </div>
+
+    <button class = "btn btn-danger btn-block" type = "submit">
+      Delete
+    </button>
+
+    </ng-scrollbar>
+  </div>
+
+  <nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
+    <div class="container-fluid">
+      <a routerLink="/" class="navbar-brand text-white">
+        <span class="fas fa-paw mr-1"></span>
+        Home
+      </a>
+    </div>
+  </nav>
+</form>

@@ -15,7 +15,7 @@ CourseModel.findCoursesByIds = findCoursesByIds;
 module.exports = CourseModel;
 
 function createCourseForProf(userId, course) {
-  course._faculty = userId;
+  course.faculty = userId;
   return CourseModel.create(course)
     .then(function (responseCourse) {
       UserModel.findUserById(userId)
@@ -32,7 +32,7 @@ function findCourseById(courseId) {
 }
 
 function findCourseByNumber(courseNumber) {
-  return CourseModel.findOne({name: courseNumber});
+  return CourseModel.findOne({number: courseNumber});
 }
 
 function updateCourse(courseId, course) {
@@ -48,7 +48,7 @@ function signatureCourses() {
 }
 
 function deleteCoursesByProf(userId) {
-  return CourseModel.remove({_faculty: userId});
+  return CourseModel.remove({faculty: userId});
 }
 
 function findCoursesByIds(courseIds) {
