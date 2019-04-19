@@ -35,7 +35,7 @@
         <td class="text-align">{{professor.lastName}}</td>
         <td class="text-align">{{professor.email}}</td>
         <td class="actions">
-          <button type="button" class="btn btn-outline-success btn-sm btn-space" data-toggle="modal" data-target="#professorModal" (click)="findUserById(professor._id)">
+          <button type="button" class="btn btn-outline-success btn-sm btn-space" (click)="editUser(professor)">
             <i class="fas fa-user-edit"></i>
             Edit
           </button>
@@ -50,52 +50,6 @@
     </table>
 
     <br/>
-
-    <!--<Modal>-->
-    <div *ngIf="modalFlag">
-      <div class="modal fade" id="professorModal" tabindex="-1" role="dialog" aria-labelledby="professorModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="professorModalLabel">Edit User</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="username">Username</label>
-                  <input id="username" type="text" placeholder="alice" class="form-control"
-                         [(ngModel)]="user.username" name="username" disabled/>
-                </div>
-                <div class="form-group">
-                  <label for="firstName">FirstName</label>
-                  <input id="firstName" type="text" placeholder="Alice" class="form-control"
-                         [(ngModel)]="user.firstName" name="firstName"/>
-                </div>
-                <div class="form-group">
-                  <label for="lastName">LastName</label>
-                  <input id="lastName" type="text" placeholder="Wonderland" class="form-control"
-                         [(ngModel)]="user.lastName" name="lastName"/>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input id="email" type="text" placeholder="alice@gmail.com" class="form-control"
-                         [(ngModel)]="user.email" name="email"/>
-                </div>
-              </form>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" (click)="updateUser(user._id, user)" data-dismiss="modal">Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <a class="btn btn-secondary btn-block" routerLink="new">
       <i class="fas fa-user-plus"></i>

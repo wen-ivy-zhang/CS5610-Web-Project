@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
-// import {environment} from '../../../../environments/environment';
-import {environment} from '../../../../environments/environment.prod';
+import {environment} from '../../../../environments/environment';
+// import {environment} from '../../../../environments/environment.prod';
 import {Router} from '@angular/router';
 import {SharedService} from '../../../services/shared.service';
 import {UserService} from '../../../services/user.service.client';

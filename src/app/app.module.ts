@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // home component
 import { HomeComponent } from './views/home/home/home.component';
@@ -44,6 +46,7 @@ import { WidgetYoutubeComponent } from './views/widget/widget-edit/widget-youtub
 import {SharedService} from './services/shared.service';
 import {UserService} from './services/user.service.client';
 import {CourseService} from './services/course.service.client';
+import { UserDialogComponent } from './views/user/user-dialog/user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -73,19 +76,26 @@ import {CourseService} from './services/course.service.client';
     WidgetHeaderComponent,
     WidgetHtmlComponent,
     WidgetImageComponent,
-    WidgetYoutubeComponent
+    WidgetYoutubeComponent,
+    UserDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     SharedService,
     UserService,
     CourseService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [UserDialogComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import {User} from '../../../../models/user.model.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SharedService} from '../../../../services/shared.service';
 import {UserService} from '../../../../services/user.service.client';
+import {MatDialog, MatDialogConfig} from '@angular/material';
+import {UserDialogComponent} from '../../user-dialog/user-dialog.component';
 
 @Component({
   selector: 'app-faculty-edit',
@@ -13,7 +15,6 @@ export class FacultyEditComponent implements OnInit {
 
   user: User;
   faculty: User[];
-  modalFlag: boolean;
   // user =  new User('1', 'alice', 'alice', 'Alice', 'Alice', 'alice@test.com', 'admin');
   // faculty = [
   //   new User('2', 'bob', 'bob', 'Bob', 'Bob', 'bob@test.com', 'FACULTY'),
@@ -22,8 +23,8 @@ export class FacultyEditComponent implements OnInit {
 
   constructor(private router: Router,
               private sharedService: SharedService,
-              private userService: UserService) {
-
+              private userService: UserService,
+              private dialog: MatDialog) {
     this.user = new User(null, null, null, null, null, null, null);
     this.faculty = [];
   }
@@ -37,29 +38,6 @@ export class FacultyEditComponent implements OnInit {
     );
   }
 
-  findUserById(userId) {
-    console.log('hit find user by id!!!');
-    console.log(userId);
-    this.userService.findUserById(userId).subscribe(
-      (user: User) => {
-        this.user = user;
-        console.log(this.user);
-      }
-    );
-    if (this.user) {
-      this.modalFlag = true;
-      console.log('set modalFlag to true!!!');
-    }
-  }
-
-  updateUser(userId, changed_user) {
-    return this.userService.updateUserInServer(userId, changed_user).subscribe(
-      () => {
-        this.ngOnInit();
-      }
-    );
-  }
-
   ngOnInit() {
     this.userService.findAllFaculty().subscribe(
       (faculty: User[]) => {
@@ -67,4 +45,32 @@ export class FacultyEditComponent implements OnInit {
       }
     );
   }
+
+  editUser({_id, username, firstName, lastName, email}: User) {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      _id, username, firstName, lastName, email
+    };
+
+    const dialogRef = this.dialog.open(UserDialogComponent,
+      dialogConfig);
+
+
+    // dialogRef.afterClosed().subscribe(
+    //   val => console.log('Dialog output:', val)
+    // );
+
+    return dialogRef.afterClosed().subscribe(
+      () => {
+        this.ngOnInit();
+      }
+    );
+
+  }
+
 }
