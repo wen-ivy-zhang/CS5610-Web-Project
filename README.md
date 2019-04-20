@@ -1,5 +1,7 @@
 # CS6510-Project
 
+Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Project/wiki).
+
 ### Contributing to this Project
 
 * clone repo to local machine  
