@@ -41,3 +41,4 @@ Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Pr
 * [Heroku Dashboard](https://dashboard.heroku.com/apps/cs5610-project)
 * [Heroku App](https://cs5610-project.herokuapp.com/)
 * [Project Requirement](https://onedrive.live.com/view.aspx?resid=5122A5DA1ABBEA0C!952&ithint=file%2cdocx&authkey=!ANFc4Yn-vxTaFik)
+* [Project Plan](https://docs.google.com/document/d/1MnNQ41n_ykYNjYfnOvnKftkkIsZrU3J79_dvf2aNomA/edit#)
