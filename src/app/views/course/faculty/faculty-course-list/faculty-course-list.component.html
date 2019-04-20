@@ -12,15 +12,7 @@
   </div>
 </nav>
 
-<div class="container">
-  <ng-scrollbar [invertX]="true"
-                [invertY]="true"
-                [trackX]="true"
-                [compact]="true"
-                [shown]="always"
-                [disableOnBreakpoints]="false"
-                [disabled]="false">
-
+<div class="container mt-4">
   <table class="table table-striped">
     <thead class="thead-neu">
     <tr>
@@ -55,7 +47,6 @@
     </tr>
     </tbody>
   </table>
-  </ng-scrollbar>
 
   <button routerLink="/faculty/{{userId}}/courses/new" class="btn btn-secondary mr-2">
     Create Course

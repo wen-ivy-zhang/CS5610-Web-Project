@@ -17,7 +17,7 @@ export class CourseEditComponent implements OnInit {
   userId: String;
   courseNumber: String;
   classTimes = new ClassTimes('', '', '');
-  course: Course = new Course('', '', '', 0.0, 0.0,
+  course: Course = new Course('', '', '', 0.0, 0, 0,
     this.classTimes, new Date(), new Date(), '', '');
   errorFlag: boolean;
   errorMsg = 'Course name is required!';
