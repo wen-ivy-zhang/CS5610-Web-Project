@@ -51,11 +51,11 @@
              id = "number" placeholder="{{course.number}}"/>
     </div>
 
-      <div class = "form-group">
-        <label for = "description"> Course Description</label>
-        <input [(ngModel)]="course.description" type = "text" name = "description" class = "form-control"
-               id = "description" placeholder="{{course.description}}"/>
-      </div>
+      <!--<div class = "form-group">-->
+        <!--<label for = "description"> Course Description</label>-->
+        <!--<input [(ngModel)]="course.description" type = "text" name = "description" class = "form-control"-->
+               <!--id = "description" placeholder="{{course.description}}"/>-->
+      <!--</div>-->
 
     <div class = "form-group">
       <label for = "day"> Course Day</label>
@@ -63,29 +63,67 @@
              id = "day" placeholder="{{course.classTimes.day}}"/>
     </div>
 
-    <div class = "form-group">
-      <label for = "startTime"> Course StartTime</label>
-      <input [(ngModel)]="course.classTimes.startTime" type = "text" name = "startTime" class = "form-control"
-             id = "startTime" placeholder="{{course.classTimes.startTime}}"/>
-    </div>
+      <table>
+        <tr>
+          <td>
+            <div class = "form-group">
+              <label for = "startTime"> Course StartTime</label>
+              <input [(ngModel)]="course.classTimes.startTime" type = "text" name = "startTime" class = "form-control"
+                     id = "startTime" placeholder="{{course.classTimes.startTime}}"/>
+            </div>
+          </td>
+          <td>
+            <div class = "form-group">
+              <label for = "endTime"> Course endTime</label>
+              <input [(ngModel)]="course.classTimes.endTime" type = "text" name = "endTime" class = "form-control"
+                     id = "endTime" placeholder="{{course.classTimes.endTime}}"/>
+            </div>
+          </td>
+        </tr>
+      </table>
 
-    <div class = "form-group">
-      <label for = "endTime"> Course endTime</label>
-      <input [(ngModel)]="course.classTimes.endTime" type = "text" name = "endTime" class = "form-control"
-             id = "endTime" placeholder="{{course.classTimes.endTime}}"/>
-    </div>
+    <!--<div class = "form-group">-->
+      <!--<label for = "startTime"> Course StartTime</label>-->
+      <!--<input [(ngModel)]="course.classTimes.startTime" type = "text" name = "startTime" class = "form-control"-->
+             <!--id = "startTime" placeholder="{{course.classTimes.startTime}}"/>-->
+    <!--</div>-->
 
-    <div class = "form-group">
-      <label for = "startDate"> Course StartDate</label>
-      <input [(ngModel)]="course.startDate" type = "date" name = "startDate" class = "form-control"
-             id = "startDate" placeholder="{{course.startDate}}"/>
-    </div>
+    <!--<div class = "form-group">-->
+      <!--<label for = "endTime"> Course endTime</label>-->
+      <!--<input [(ngModel)]="course.classTimes.endTime" type = "text" name = "endTime" class = "form-control"-->
+             <!--id = "endTime" placeholder="{{course.classTimes.endTime}}"/>-->
+    <!--</div>-->
 
-    <div class = "form-group">
-      <label for = "endDate"> Course endDate</label>
-      <input [(ngModel)]="course.endDate" type = "date" name = "endDate" class = "form-control"
-             id = "endDate" placeholder="{{course.endDate}}"/>
-    </div>
+      <table>
+        <tr>
+          <td>
+            <div class = "form-group">
+              <label for = "startDate"> Course StartDate</label>
+              <input [(ngModel)]="course.startDate" type = "date" name = "startDate" class = "form-control"
+                     id = "startDate" placeholder="{{course.startDate}}"/>
+            </div>
+          </td>
+          <td>
+            <div class = "form-group">
+              <label for = "endDate"> Course endDate</label>
+              <input [(ngModel)]="course.endDate" type = "date" name = "endDate" class = "form-control"
+                     id = "endDate" placeholder="{{course.endDate}}"/>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    <!--<div class = "form-group">-->
+      <!--<label for = "startDate"> Course StartDate</label>-->
+      <!--<input [(ngModel)]="course.startDate" type = "date" name = "startDate" class = "form-control"-->
+             <!--id = "startDate" placeholder="{{course.startDate}}"/>-->
+    <!--</div>-->
+
+    <!--<div class = "form-group">-->
+      <!--<label for = "endDate"> Course endDate</label>-->
+      <!--<input [(ngModel)]="course.endDate" type = "date" name = "endDate" class = "form-control"-->
+             <!--id = "endDate" placeholder="{{course.endDate}}"/>-->
+    <!--</div>-->
 
     <div class = "form-group">
       <label for = "term"> Course Term</label>

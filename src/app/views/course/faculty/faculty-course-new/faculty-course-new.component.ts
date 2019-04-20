@@ -15,7 +15,7 @@ export class FacultyCourseNewComponent implements OnInit {
   @ViewChild('newcourse') NewCourseFrom: NgForm;
   userId: string;
   classTimes = new ClassTimes('', '', '');
-  course: Course = new Course('', '', '', 0.0, 0.0,
+  course: Course = new Course('', '', '', 0.0, 0, 0,
     this.classTimes, new Date(), new Date(), '', '');
 
   constructor(private userService: UserService,
@@ -36,7 +36,7 @@ export class FacultyCourseNewComponent implements OnInit {
   newCourse() {
     console.log(this.NewCourseFrom.value.name);
     console.log(this.NewCourseFrom.value.number);
-    console.log(this.NewCourseFrom.value.description);
+    // console.log(this.NewCourseFrom.value.description);
     console.log(this.NewCourseFrom.value.day);
     console.log(this.NewCourseFrom.value.startTime);
     console.log(this.NewCourseFrom.value.endTime);
@@ -53,9 +53,10 @@ export class FacultyCourseNewComponent implements OnInit {
       this.userId,
       new Course(this.NewCourseFrom.value.name,
         this.NewCourseFrom.value.number,
-        this.NewCourseFrom.value.description,
+        '',
         0.0,
-        0.0,
+        0,
+        0,
         this.classTimes,
         this.NewCourseFrom.value.startDate,
         this.NewCourseFrom.value.endDate,

@@ -16,6 +16,7 @@ export class StudentCourseNewComponent implements OnInit {
   userId: String;
   // user: User;
   user: any;
+  tempfaculty: any;
   // courses: Course[] = [];
   // tempCourse: Course;
   courses: any;
@@ -64,13 +65,19 @@ export class StudentCourseNewComponent implements OnInit {
         this.tempCourse = data;
         console.log(this.tempCourse);
         if (this.tempCourse) {
-          this.searchFlag = true;
-          for (let i = 0; i < this.courses.length; i++) {
-            if (this.courses[i]._id === this.tempCourse._id) {
-            // if (this.courses[i]._id == this.tempCourse._id) {
-              this.alreadyRegistered = true;
-            }
-          }
+          this.userService.findUserById(this.tempCourse.faculty)
+            .subscribe(
+              (res: any) => {
+                this.tempfaculty = res;
+                this.searchFlag = true;
+                for (let i = 0; i < this.courses.length; i++) {
+                  if (this.courses[i]._id === this.tempCourse._id) {
+                    // if (this.courses[i]._id == this.tempCourse._id) {
+                    this.alreadyRegistered = true;
+                  }
+                }
+              }
+            );
         }
       }
     );

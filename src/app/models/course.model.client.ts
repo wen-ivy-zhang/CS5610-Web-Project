@@ -4,9 +4,9 @@ export class Course {
   faculty: String;
   number: String;
   description: String;
-  rating: Number;
-  sumRating: Number;
-  numRating: Number;
+  rating: number;
+  sumRating: number;
+  numRating: number;
   widgets: [String];
   // classTimes: [{
   //   day: String,
@@ -25,7 +25,8 @@ export class Course {
               number: String,
               description: String,
               rating = 0.0,
-              numRating = 0.0,
+              sumRating = 0,
+              numRating = 0,
               classTimes: ClassTimes,
               startDate: Date,
               endDate: Date,
@@ -37,6 +38,7 @@ export class Course {
     this.number = number;
     this.description = description;
     this.rating = rating;
+    this.sumRating = sumRating;
     this.numRating = numRating;
     this.classTimes = classTimes;
     this.startDate = startDate;

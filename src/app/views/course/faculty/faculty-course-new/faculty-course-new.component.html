@@ -27,15 +27,15 @@
   </nav>
 
 
-  <ng-scrollbar [invertX]="true"
-                [invertY]="true"
-                [trackX]="true"
-                [compact]="true"
-                [shown]="always"
-                [disableOnBreakpoints]="false"
-                [disabled]="false">
-
-  <div class="container-fluid cl-container-padding">
+  <!--<div class="container-fluid cl-container-padding">-->
+    <div class="container mt-4" style="height: 600px;">
+      <ng-scrollbar [invertX]="true"
+                    [invertY]="true"
+                    [trackX]="true"
+                    [compact]="true"
+                    [shown]="always"
+                    [disableOnBreakpoints]="false"
+                    [disabled]="false">
 
     <div class = "form-group">
       <label for = "name"> Course Name</label>
@@ -52,11 +52,11 @@
              ngModel required #number="ngModel"/>
     </div>
 
-      <div class = "form-group">
-        <label for = "description"> Course Description</label>
-        <input type = "text" name = "description" class = "form-control" id = "description" placeholder="Course Description"
-               ngModel required #description="ngModel"/>
-      </div>
+      <!--<div class = "form-group">-->
+        <!--<label for = "description"> Course Description</label>-->
+        <!--<input type = "text" name = "description" class = "form-control" id = "description" placeholder="Course Description"-->
+               <!--ngModel required #description="ngModel"/>-->
+      <!--</div>-->
 
     <div class = "form-group">
       <label for = "day"> Course Day</label>
@@ -64,29 +64,58 @@
              ngModel required #day="ngModel"/>
     </div>
 
-    <div class = "form-group">
-      <label for = "startTime"> Course StartTime</label>
-      <input type = "text" name = "startTime" class = "form-control" id = "startTime" placeholder="Course StartTime"
-             ngModel required #startTime="ngModel"/>
-    </div>
 
-    <div class = "form-group">
-      <label for = "endTime"> Course EndTime</label>
-      <input type = "text" name = "endTime" class = "form-control" id = "endTime" placeholder="Course EndTime"
-             ngModel required #endTime="ngModel"/>
-    </div>
+      <table>
+        <tr>
+          <td>
+            <div class = "form-group">
+              <label for = "startTime"> Course StartTime</label>
+              <input type = "text" name = "startTime" class = "form-control" id = "startTime" placeholder="Course StartTime"
+                     ngModel required #startTime="ngModel"/>
+            </div>
+          </td>
+          <td>
+            <div class = "form-group">
+              <label for = "endTime"> Course EndTime</label>
+              <input type = "text" name = "endTime" class = "form-control" id = "endTime" placeholder="Course EndTime"
+                     ngModel required #endTime="ngModel"/>
+            </div>
+          </td>
+        </tr>
+      </table>
 
-    <div class = "form-group">
-      <label for = "startDate"> Course StartDate</label>
-      <input type = "date" name = "startDate" class = "form-control" id = "startDate" placeholder="Course StartDate"
-             ngModel required #startDate="ngModel"/>
-    </div>
 
-    <div class = "form-group">
-      <label for = "endDate"> Course EndDate</label>
-      <input type = "date" name = "endDate" class = "form-control" id = "endDate" placeholder="Course EndDate"
-             ngModel required #endDate="ngModel"/>
-    </div>
+        <table>
+          <tr>
+            <td>
+              <div class = "form-group">
+                <label for = "startDate"> Course StartDate</label>
+                <input type = "date" name = "startDate" class = "form-control" id = "startDate" placeholder="Course StartDate"
+                       ngModel required #startDate="ngModel"/>
+              </div>
+            </td>
+            <td>
+              <div class = "form-group">
+                <label for = "endDate"> Course EndDate</label>
+                <input type = "date" name = "endDate" class = "form-control" id = "endDate" placeholder="Course EndDate"
+                       ngModel required #endDate="ngModel"/>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+
+    <!--<div class = "form-group">-->
+      <!--<label for = "startDate"> Course StartDate</label>-->
+      <!--<input type = "date" name = "startDate" class = "form-control" id = "startDate" placeholder="Course StartDate"-->
+             <!--ngModel required #startDate="ngModel"/>-->
+    <!--</div>-->
+
+    <!--<div class = "form-group">-->
+      <!--<label for = "endDate"> Course EndDate</label>-->
+      <!--<input type = "date" name = "endDate" class = "form-control" id = "endDate" placeholder="Course EndDate"-->
+             <!--ngModel required #endDate="ngModel"/>-->
+    <!--</div>-->
 
     <div class = "form-group">
       <label for = "term"> Course Term</label>
@@ -100,8 +129,9 @@
              ngModel required #location="ngModel"/>
     </div>
 
+      </ng-scrollbar>
   </div>
-  </ng-scrollbar>
+
 
   <nav class="navbar fixed-bottom navbar-expand-lg nav-neu">
     <div class="container-fluid">
