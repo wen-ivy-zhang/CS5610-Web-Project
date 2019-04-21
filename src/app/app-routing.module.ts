@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {AuthGuard} from './services/auth-guard.service';
+
 // home component
 import { HomeComponent } from './views/home/home/home.component';
 import { LoginComponent } from './views/home/login/login.component';
@@ -40,7 +42,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'courses', component: CoursesComponent},
-  {path: 'student', component: StudentComponent},
+  {path: 'student', component: StudentComponent, canActivate: [AuthGuard]},
   {path: 'faculty', component: FacultyComponent},
   {path: 'student/:uid/courses', component: StudentCourseListComponent},
   {path: 'student/:uid/courses/new', component: StudentCourseNewComponent},
@@ -54,10 +56,10 @@ const routes: Routes = [
   {path: 'admin/faculty/new', component: FacultyNewComponent},
   {path: 'admin/student', component: StudentEditComponent},
   {path: 'admin/student/new', component: StudentNewComponent},
-  // dummy routes for testing
-  {path: 'faculty/courses', component: CoursesComponent},
-  {path: 'faculty/courses/new', component: CoursesComponent},
-  {path: 'student/courses', component: CoursesComponent},
+  {path: 'faculty/courses', component: FacultyCourseListComponent},
+  {path: 'faculty/courses/new', component: FacultyCourseNewComponent},
+  {path: 'student/courses', component: StudentCourseListComponent},
+  {path: 'student/courses/new', component: StudentCourseNewComponent},
   {path: 'student/:uid/courses/:cnum/widget', component: WidgetViewComponent},
   {path: 'faculty/:uid/courses/:cnum/widget', component: WidgetListComponent},
   {path: 'user/:uid/courses/:cnum/widget/new', component: WidgetChooserComponent},
