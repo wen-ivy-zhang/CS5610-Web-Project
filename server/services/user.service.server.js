@@ -23,8 +23,8 @@ module.exports = function (app) {
   app.delete("/api/user/:userId", deleteUser);
   app.get('/facebook/login', passport.authenticate('facebook', {scope: 'email'}));
   app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-    successRedirect: '/student',
-    failureRedirect: '/login'
+    successRedirect: '/#/student',
+    failureRedirect: '/#/login'
   }));
 
 
