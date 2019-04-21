@@ -2,7 +2,7 @@
 module.exports= function(app, models){
 
   var multer = require('multer'); // npm install multer --save
-  var upload = multer({ dest: __dirname + '/../../dist/my-project/assets/uploads' });
+  var upload = multer({ dest: __dirname + '/../../dist/project/assets/uploads' });
   //var upload = multer({ dest: __dirname + '/../../src/assets/uploads' });
 
 
