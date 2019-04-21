@@ -53,8 +53,8 @@ Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Pr
 3. edit faculty  
    - view a list of all the faculties with their personal info  
    - add, edit or delete a faculty as needed  
-   note: deleting a faculty will delete all the courses he/she teaches, from courses database, and from students'  
- course lists if enrolled.
+   note: deleting a faculty will delete all the courses he/she teaches, from courses database, and from  
+   students' course lists if enrolled.
 4. edit student  
    - view a list of all the students with their personal info  
    - add, edit or delete a student as needed  
