@@ -147,8 +147,14 @@ Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Pr
    - click "Log out" button on the student dashboard
 ```
   
-### Links 
+### Links
+* [Youtube Demo](https://youtu.be/n_SUFhp8bxs)
 * [Heroku Dashboard](https://dashboard.heroku.com/apps/cs5610-project)
 * [Heroku App](https://cs5610-project.herokuapp.com/)
 * [Project Requirement](https://onedrive.live.com/view.aspx?resid=5122A5DA1ABBEA0C!952&ithint=file%2cdocx&authkey=!ANFc4Yn-vxTaFik)
 * [Project Plan](https://docs.google.com/document/d/1MnNQ41n_ykYNjYfnOvnKftkkIsZrU3J79_dvf2aNomA/edit#)
+
+### Note
+Like in previous assignments, the click of uploadImage button within Image widget won't redirect
+to other pages, but will stay at the same edit page. User needs to cancel the request on the browser
+to avoid request timeout error. This won't affect the image widget edit functionality.
