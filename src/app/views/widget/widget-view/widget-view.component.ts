@@ -4,6 +4,7 @@ import {WidgetService} from '../../../services/widget.service.client';
 import {ActivatedRoute} from '@angular/router';
 import {CourseService} from '../../../services/course.service.client';
 import {DomSanitizer} from '@angular/platform-browser';
+import {UserService} from '../../../services/user.service.client';
 
 @Component({
   selector: 'app-widget-view',
@@ -16,10 +17,12 @@ export class WidgetViewComponent implements OnInit {
   courseNumber: string;
   course: any;
   widgets: Widget[] = [];
+  tempfaculty: any;
 
   constructor(private widgetService: WidgetService,
               private activatedRoute: ActivatedRoute,
               private courseService: CourseService,
+              private userService: UserService,
               public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
@@ -43,6 +46,12 @@ export class WidgetViewComponent implements OnInit {
             // console.log(result);
           }
         );
+        this.userService.findUserById(this.course.faculty)
+          .subscribe(
+            (res: any) => {
+              this.tempfaculty = res;
+            }
+          );
       }
     );
   }

@@ -1,7 +1,6 @@
-<div *ngIf="registerFlag" class = "alert alert-danger">
-  {{registerMsg}}
-</div>
-
+<!--<div *ngIf="registerFlag" class = "alert alert-danger">-->
+  <!--{{registerMsg}}-->
+<!--</div>-->
 
 <nav class="navbar navbar-fixed-top navbar-expand-lg nav-neu">
   <div class="container-fluid row">
@@ -18,20 +17,17 @@
 </nav>
 
 
-<div class="container mt-4">
+<div class="container mt-4 mb-5">
   <div class="input-group">
-    <input [(ngModel)]="searchText" type="text" class="form-control">
-    <button class="btn btn-primary mr-2" (click)="searchCourses()">
+    <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="e.g. CS1234">
+    <button class="btn btn-secondary mr-2" (click)="searchCourses()">
+      <i class="fas fa-search"></i>
       Search by Course Number
     </button>
-    <!--<span class="input-group-btn">-->
-      <!--<a (click)="searchCourses()" class="btn btn-default" type="button">-->
-        <!--<span class="glyphicon glyphicon-search"></span>-->
-      <!--</a>-->
-    <!--</span>-->
   </div>
 
 
+  <div class="container mt-4 mb-5">
   <div *ngIf="searchFlag; else show_message">
     <table class="table table-striped">
       <thead class="thead-neu">
@@ -40,45 +36,107 @@
         <th scope="col">Course Name</th>
         <th scope="col">Average Rating</th>
         <th scope="col">Number of Ratings</th>
+        <th scope="col"></th>
       </tr>
       </thead>
 
       <tbody>
-      <!--<tr *ngFor="let course of courses">-->
-        <th scope="row" routerLink = '/student/{{userId}}/courses/{{tempCourse.number}}/widget'>{{tempCourse.number}}</th>
+        <th scope="row">
+          <a routerLink = '/student/{{userId}}/courses/{{tempCourse.number}}/widget'>{{tempCourse.number}}</a>
+        </th>
         <td>{{tempCourse.name}}</td>
-        <td>{{tempCourse.rating}}</td>
+        <td>{{tempCourse.rating.toFixed(2)}}</td>
         <td>{{tempCourse.numRating}}</td>
 
-        <!--<button routerLink="./rate" class="btn btn-secondary mr-2">-->
-        <!--Signature Courses-->
-        <!--</button>-->
         <td>
-          <button [disabled]="alreadyRegistered" class="btn btn-primary mr-2" (click)="RegisterCourse()">
+          <button [disabled]="alreadyRegistered" class="btn btn-secondary mr-2" (click)="RegisterCourse()">
+            <i class="fas fa-plus"></i>
             Register
           </button>
         </td>
-
-      <!--</tr>-->
       </tbody>
     </table>
 
-    <div class="container mt-4">
-      <h5>Course Number: {{tempCourse.number}}</h5>
-      <h5>Course Name: {{tempCourse.name}}</h5>
-      <h5>Instructor: {{tempfaculty.firstName}} {{tempfaculty.lastName}}</h5>
-      <h5>Class Time: {{tempCourse.classTimes.day}} {{tempCourse.classTimes.startTime}}-{{tempCourse.classTimes.endTime}}</h5>
-      <h5>StartDate: {{tempCourse.startDate}}</h5>
-      <h5>EndDate: {{tempCourse.endDate}}</h5>
-      <h5>Term: {{tempCourse.term}}</h5>
-      <h5>Location: {{tempCourse.location}}</h5>
+    <!--show the course details if found-->
+    <div class="container mt-5 mb-5">
+      <table class="table table-striped">
+        <thead class="thead-neu">
+        <tr>
+          <th scope="col">Basic Information</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+          <th scope="row">Course Number</th>
+          <td>{{tempCourse.number}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Course Name</th>
+          <td>{{tempCourse.name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Instructor</th>
+          <td>{{tempfaculty.firstName}} {{tempfaculty.lastName}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Class Time</th>
+          <td>{{tempCourse.classTimes.day}} {{tempCourse.classTimes.startTime}} - {{tempCourse.classTimes.endTime}}</td>
+        </tr>
+        <tr>
+          <th scope="row">StartDate</th>
+          <td>{{tempCourse.startDate}}</td>
+        </tr>
+        <tr>
+          <th scope="row">EndDate</th>
+          <td>{{tempCourse.endDate}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Term</th>
+          <td>{{tempCourse.term}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Location</th>
+          <td>{{tempCourse.location}}</td>
+        </tr>
+
+        </tbody>
+      </table>
     </div>
 
   </div>
 
+    <!--show the course lists if not found-->
   <ng-template #show_message>
     {{Message}}
   </ng-template>
+
+    <div class="container mt-4 mb-5">
+      <h5>Course List</h5>
+      <table class="table table-striped">
+        <thead class="thead-neu">
+        <tr>
+          <th scope="col">Course Number</th>
+          <th scope="col">Course Name</th>
+          <th scope="col">Average Rating</th>
+          <th scope="col">Number of Ratings</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let course of courselist">
+          <th scope="row">
+            <a routerLink = '/student/{{userId}}/courses/{{course.number}}/widget'>{{course.number}}</a>
+          </th>
+          <td>{{course.name}}</td>
+          <td>{{course.rating.toFixed(2)}}</td>
+          <td>{{course.numRating}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
 
 </div>
 
