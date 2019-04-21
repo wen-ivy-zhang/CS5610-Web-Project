@@ -10,7 +10,7 @@ Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Pr
   ```  
 * pull the lasted version to local machine
   ```
-    git pull origin master
+  git pull origin master
   ```
 * create branch for changes on local
   ```
@@ -95,8 +95,10 @@ Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Pr
    lists of any students who have enrolled in this course (i.e. cascade delete)
 7. enter a course's website
    - click a course name to go to its website
-   - add or edit a widget(similar to homework, 3rd-party API with Search-Flickr is implemented as well)  
-   in this course website as needed
+   - add,edit or delete a widget in this course website as needed  
+   note: add, edit or delete a widget is similar to homework  
+         image upload is implemented and work(even though heroku will show error)  
+         Flickr is implemented as well(3rd-party API with Search)  
 8. Log out
    - click "Log out" button on the student dashboard
 ```
