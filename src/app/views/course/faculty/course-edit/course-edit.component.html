@@ -30,7 +30,8 @@
 </form>
 
 <form (ngSubmit)="deleteCourse()" #delete ="ngForm">
-  <div class="container-fluid cl-container-padding mb-5" style="height: 600px;">
+  <!--<div class="container-fluid cl-container-padding mb-5" style="height: 600px;">-->
+  <div class="container mt-4 mb-5">
     <ng-scrollbar [invertX]="true"
                   [invertY]="true"
                   [trackX]="true"
@@ -138,6 +139,7 @@
     </div>
 
     <button class = "btn btn-danger btn-block" type = "submit">
+      <i class="fas fa-trash-alt"></i>
       Delete
     </button>
 

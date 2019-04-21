@@ -12,7 +12,7 @@
   </div>
 </nav>
 
-<div class="container mt-4">
+<div class="container mt-4 mb-5">
   <table class="table table-striped">
     <thead class="thead-neu">
     <tr>
@@ -20,26 +20,32 @@
       <th scope="col">Course Name</th>
       <th scope="col">Average Rating</th>
       <th scope="col">Number of Ratings</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let course of courses">
-      <th scope="row" routerLink = '/student/{{userId}}/courses/{{course.number}}/widget'>{{course.number}}</th>
+      <th scope="row">
+        <a routerLink = '/student/{{userId}}/courses/{{course.number}}/widget'>{{course.number}}</a>
+      </th>
       <td>{{course.name}}</td>
-      <td>{{course.rating}}</td>
+      <td>{{course.rating.toFixed(2)}}</td>
       <td>{{course.numRating}}</td>
 
       <!--<button routerLink="./rate" class="btn btn-secondary mr-2">-->
         <!--Signature Courses-->
       <!--</button>-->
       <td>
-      <button class="btn btn-primary mr-2" (click)="rateCourse(course.number)">
+      <button class="btn btn-secondary mr-2" (click)="rateCourse(course.number)">
+        <i class="fas fa-star"></i>
         Rate
       </button>
       </td>
 
       <td>
-      <button class="btn btn-primary mr-2" (click)="dropCourse(course.number)">
+      <button class="btn btn-secondary mr-2" (click)="dropCourse(course.number)">
+        <i class="fas fa-minus"></i>
         Drop
       </button>
       </td>
@@ -49,6 +55,7 @@
   </table>
 
   <button routerLink="/student/{{userId}}/courses/new" class="btn btn-secondary mr-2">
+    <i class="fas fa-plus"></i>
     Register Course
   </button>
 

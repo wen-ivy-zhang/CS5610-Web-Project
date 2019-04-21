@@ -17,7 +17,7 @@
         <!--&lt;!&ndash;Done&ndash;&gt;-->
         <!--<i class="fas fa-check fontawsome_icon"></i>-->
       <!--</a>-->
-      <button class="btn btn-pri mr-2" type = "submit">
+      <button class="btn btn-secondary mr-2" type = "submit">
         <i class="fas fa-check fontawsome_icon"></i>
       </button>
     </div>
@@ -27,19 +27,11 @@
 </form>
 
 
-<div class="container">
+<div class="container mt-5 mb-5">
   <h4>Please rate course {{courseNumber}} and provide some comments</h4>
 
   <div class="stars container">
   <!--<div class="row">-->
-
-    <!--<div class="col-md-4">-->
-      <!--<section>-->
-        <!--&lt;!&ndash;<b>Rate (1 to 5)</b>&ndash;&gt;-->
-        <!--&lt;!&ndash;<bar-rating [(rate)]="rating" [max]="5" [theme]="'default'" [showText]="true"&ndash;&gt;-->
-                    <!--&lt;!&ndash;[titles]="['Bad', 'Mediocre' , 'Good', 'Awesome']"></bar-rating>&ndash;&gt;-->
-      <!--</section>-->
-    <!--</div>-->
 
     <button mat-icon-button [color]="color" *ngFor="let ratingId of ratingArr;index as i"
             [id]="'star_'+i" (click)="onClick(i+1)" [matTooltip]="ratingId+1" matTooltipPosition="above">
@@ -50,18 +42,17 @@
     <mat-error *ngIf="starCount == null || starCount == 0">
       Star count is <strong>required</strong> and cannot be zero
     </mat-error>
-    <p class="body-2">
-      Your rated <span class="body-2">{{rating}}</span> / <span class="body-2">{{starCount}}</span>
-    </p>
+    <!--<p class="body-2">-->
+      <!--Your rated <span class="body-2">{{rating}}</span> / <span class="body-2">{{starCount}}</span>-->
+    <!--</p>-->
 
-
-    <div>
+    <div class="container mt-3 mb-3">
       <!--<textarea rows="10" class="form-control">{{comment}}</textarea>-->
       <textarea rows="8" [(ngModel)]="comment" type = "text" name = "comment" class = "form-control"
              id = "comment" placeholder="{{comment}}"></textarea>
     </div>
 
-    <div>
+    <div class="container mt-5 mb-5">
       <h5>Recent comments</h5>
       <div *ngFor = "let comment of course.comments">
         <ul class="list-group cl-list-group-borderless">
@@ -73,8 +64,7 @@
     </div>
 
   <!--</div>-->
-
-</div>
+  </div>
 </div>
 
 

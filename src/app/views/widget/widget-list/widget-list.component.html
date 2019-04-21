@@ -19,9 +19,58 @@
   </div>
 </nav>
 
-
-
 <div class="container-fluid cl-container-padding">
+
+  <!--show the course details first-->
+  <div class="container mt-4 mb-5">
+    <table class="table table-striped">
+      <thead class="thead-neu">
+      <tr>
+        <th scope="col">Basic Information</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <th scope="row">Course Number</th>
+        <td>{{course.number}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Course Name</th>
+        <td>{{course.name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Instructor</th>
+        <td>{{tempfaculty.firstName}} {{tempfaculty.lastName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Class Time</th>
+        <td>{{course.classTimes.day}} {{course.classTimes.startTime}} - {{course.classTimes.endTime}}</td>
+      </tr>
+      <tr>
+        <th scope="row">StartDate</th>
+        <td>{{course.startDate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">EndDate</th>
+        <td>{{course.endDate}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Term</th>
+        <td>{{course.term}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Location</th>
+        <td>{{course.location}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container mt-4 mb-5">
   <div class="widget-list">
     <!--<ul class="list-group cl-list-group-borderless">-->
     <div *ngFor = "let widget of widgets">
@@ -110,6 +159,7 @@
     </div>
     <!--</ul>-->
   </div>
+  </div>>
 </div>
 
 

@@ -3,7 +3,7 @@
   <div class="container-fluid row">
     <div class="pull-left">
       <!--<a routerLink="/" class="navbar-brand text-white">-->
-      <a routerLink = "/faculty/{{userId}}/courses/{{courseNumber}}/widget/{{widgetId}}" class="navbar-brand text-white">
+      <a routerLink = "/user/{{userId}}/courses/{{courseNumber}}/widget/{{widgetId}}" class="navbar-brand text-white">
         <span class="fas fa-chevron-left"></span>
       </a>
       <a class="navbar-brand text-white ml-4">
@@ -20,7 +20,8 @@
     <input [(ngModel)]="searchText" type="text" class="form-control">
     <span class="input-group-btn">
       <a (click)="searchPhotos()" class="btn btn-default" type="button">
-        <span class="glyphicon glyphicon-search"></span>
+        <i class="fas fa-search"></i>
+        <!--<span class="glyphicon glyphicon-search"></span>-->
       </a>
     </span>
   </div>

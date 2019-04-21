@@ -17,10 +17,12 @@ export class WidgetListComponent implements OnInit {
   courseNumber: string;
   course: any;
   widgets: Widget[] = [];
+  tempfaculty: any;
 
   constructor(private widgetService: WidgetService,
               private activatedRoute: ActivatedRoute,
               private courseService: CourseService,
+              private userService: UserService,
               public sanitizer: DomSanitizer) { }
 
   // receiving the emitted event
@@ -57,6 +59,12 @@ export class WidgetListComponent implements OnInit {
             // console.log(result);
           }
         );
+        this.userService.findUserById(this.course.faculty)
+          .subscribe(
+            (res: any) => {
+              this.tempfaculty = res;
+            }
+          );
       }
     );
   }

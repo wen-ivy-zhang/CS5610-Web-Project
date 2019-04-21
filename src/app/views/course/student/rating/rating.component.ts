@@ -4,9 +4,8 @@ import {CourseService} from '../../../../services/course.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ClassTimes, Course} from '../../../../models/course.model.client';
 import {NgForm} from '@angular/forms';
-
-import { Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import {Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
 
 
 @Component({
@@ -70,7 +69,9 @@ export class RatingComponent implements OnInit {
   submitRating() {
     console.log('comment: ' + this.comment);
     if (this.comment !== 'Please leave a comment here ...') {
-      this.course.comments.push(this.comment);
+      // this.course.comments.push(this.comment);
+      // add new comment to the beginning of the array so that comments will be displayed in most recent order
+      this.course.comments.unshift(this.comment);
     }
     this.course.numRating++;
     this.course.sumRating = this.course.sumRating + this.rating;
@@ -93,9 +94,12 @@ export class RatingComponent implements OnInit {
   onClick(rate: number) {
     console.log('on click' + rate);
     this.rating = rate;
-    this.snackBar.open('You rated ' + this.rating + ' / ' + this.starCount, '', {
-      duration: this.snackBarDuration
-    });
+
+    const config = new MatSnackBarConfig();
+    config.verticalPosition = 'top';
+    config.horizontalPosition = 'center';
+    config.duration = this.snackBarDuration;
+    this.snackBar.open('You rated ' + this.rating + ' / ' + this.starCount, '', config);
     this.ratingUpdated.emit(this.rating);
     return false;
   }

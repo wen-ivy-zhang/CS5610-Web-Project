@@ -28,7 +28,7 @@
 
 
   <!--<div class="container-fluid cl-container-padding">-->
-    <div class="container mt-4" style="height: 600px;">
+    <div class="container mt-4 mb-5">
       <ng-scrollbar [invertX]="true"
                     [invertY]="true"
                     [trackX]="true"
@@ -70,14 +70,14 @@
           <td>
             <div class = "form-group">
               <label for = "startTime"> Course StartTime</label>
-              <input type = "text" name = "startTime" class = "form-control" id = "startTime" placeholder="Course StartTime"
+              <input type = "text" name = "startTime" class = "form-control" id = "startTime" placeholder="e.g. 18:30"
                      ngModel required #startTime="ngModel"/>
             </div>
           </td>
           <td>
             <div class = "form-group">
               <label for = "endTime"> Course EndTime</label>
-              <input type = "text" name = "endTime" class = "form-control" id = "endTime" placeholder="Course EndTime"
+              <input type = "text" name = "endTime" class = "form-control" id = "endTime" placeholder="e.g. 21:30"
                      ngModel required #endTime="ngModel"/>
             </div>
           </td>
@@ -119,13 +119,13 @@
 
     <div class = "form-group">
       <label for = "term"> Course Term</label>
-      <input type = "text" name = "term" class = "form-control" id = "term" placeholder="Course Term"
+      <input type = "text" name = "term" class = "form-control" id = "term" placeholder="e.g. 2019 Spring"
              ngModel required #term="ngModel"/>
     </div>
 
     <div class = "form-group">
       <label for = "location"> Course Location</label>
-      <input type = "text" name = "location" class = "form-control" id = "location" placeholder="Course Location"
+      <input type = "text" name = "location" class = "form-control" id = "location" placeholder="e.g. 225 Terry Ave, Room 307"
              ngModel required #location="ngModel"/>
     </div>
 
