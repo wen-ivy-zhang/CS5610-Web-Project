@@ -3,6 +3,7 @@ import {Course} from '../../../../models/course.model.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../../../../services/user.service.client';
 import {CourseService} from '../../../../services/course.service.client';
+import {SharedService} from '../../../../services/shared.service';
 
 @Component({
   selector: 'app-student-course-list',
@@ -23,6 +24,7 @@ export class StudentCourseListComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.userId = this.sharedService.user['_id'];
     this.activatedRoute.params.subscribe(
       (params: any) => {
         this.userId = params['uid'];
