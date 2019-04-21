@@ -87,16 +87,16 @@ Please see project description in [wiki](https://github.com/sunnyfz309/CS5610-Pr
 5. Edit a course
    - click on the "Edit" button next to a course.
    - update any info as needed
-   note: if a student has enrolled in this course, any update on the course will be reflected in the student's  
- course list as well(i.e. cascade update)
+   note: if a student has enrolled in this course, any update on the course will be reflected in the  
+   student's course list as well(i.e. cascade update)
 6. Delete a course
    - click on the "Delete" button next to a course  
-   - this course will be removed from the faculty's course list, the courses database, and the course lists of  
- any students who have enrolled in this course (i.e. cascade delete)
+   - this course will be removed from the faculty's course list, the courses database, and the course  
+   lists of any students who have enrolled in this course (i.e. cascade delete)
 7. enter a course's website
    - click a course name to go to its website
-   - add or edit a widget(similar to homework, 3rd-party API with Search-Flickr is implemented as well) in this  
- course website as needed
+   - add or edit a widget(similar to homework, 3rd-party API with Search-Flickr is implemented as well)  
+   in this course website as needed
 8. Log out
    - click "Log out" button on the student dashboard
 ```
