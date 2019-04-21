@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment.prod';
 import {SharedService} from './shared.service';
 import {Router} from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
@@ -37,7 +38,21 @@ export class UserService {
   }
 
   loggedIn() {
-    return this._http.post(this.baseUrl + '/api/loggedIn', '', { withCredentials: true });
+    // return this._http.post(this.baseUrl + '/api/loggedIn', '', { withCredentials: true });
+    return this._http.post(this.baseUrl + '/api/loggedIn', '', { withCredentials: true })
+      .pipe(
+        map(
+          (user: any) => {
+            if (user !== 0) {
+              this.sharedService.user = user;
+              return true;
+            } else {
+              this.router.navigate(['/login']);
+              return false;
+            }
+          }
+        )
+      );
   }
 
   logout() {

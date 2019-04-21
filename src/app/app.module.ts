@@ -82,6 +82,7 @@ import {UserService} from './services/user.service.client';
 import {CourseService} from './services/course.service.client';
 import {WidgetService} from './services/widget.service.client';
 import {FlickrService} from './services/flickr.service.client';
+import {AuthGuard} from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -163,7 +164,8 @@ import {FlickrService} from './services/flickr.service.client';
     UserService,
     CourseService,
     WidgetService,
-    FlickrService
+    FlickrService,
+    AuthGuard
   ],
   bootstrap: [AppComponent],
   entryComponents: [UserDialogComponent]
