@@ -21,7 +21,8 @@ export class StudentCourseListComponent implements OnInit {
   constructor(private userService: UserService,
               private courseService: CourseService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private sharedService: SharedService) { }
 
   ngOnInit() {
     this.userId = this.sharedService.user['_id'];
